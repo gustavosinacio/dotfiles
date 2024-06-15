@@ -20,6 +20,18 @@ function gaa {
   git add .
 }
 
+function gcm($param) {
+  git commit -m $param
+}
+
+gp($origin $branch) {
+  git push $origin $branch
+}
+
+gl($origin $branch) {
+  git pull $origin $branch
+}
+
 function gco($param) {
   git checkout $param
 }
