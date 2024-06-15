@@ -15,11 +15,21 @@ return {
     config = function()
       -- Telescope Configurations
       local telescope = require("telescope")
+      local actions = require("telescope.actions")
+      local builtin = require("telescope.builtin")
 
       telescope.setup({
         defaults = {
           file_ignore_patterns = { "node_modules" }, -- Ignore certain directories
-          follow = true, -- Follow symbolic links
+          follow = true,                        -- Follow symbolic links
+          mappings = {
+            i = {
+              ["<CR>"] = actions.select_tab,
+            },
+            n = {
+              ["<CR>"] = actions.select_tab,
+            },
+          },
         },
         extensions = {
           live_grep_args = {
@@ -28,7 +38,6 @@ return {
         },
       })
 
-      local builtin = require("telescope.builtin")
       vim.keymap.set(
         "n",
         "<leader>sG",
