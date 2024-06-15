@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.colors ] && source $HOME/.colors
 [ -f ./.nvmrc ] && nvm use &>/dev/null
 
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/my-omp.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/dotfiles/oh-my-posh.toml)"
 
 # if command -v tmux &> /dev/null; then
   # tmux &> /dev/null
