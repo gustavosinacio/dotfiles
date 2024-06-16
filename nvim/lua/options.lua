@@ -7,14 +7,14 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.o.hlsearch = true -- Highlight search results
-vim.o.incsearch = true -- Incremental search
-vim.o.ignorecase = true -- Ignore case in search patterns
-vim.o.smartcase = true -- Override ignorecase if search pattern contains uppercase letters
-vim.o.wrap = false -- Disable line wrap
-vim.o.cursorline = true -- Highlight the current line
+vim.o.hlsearch = true      -- Highlight search results
+vim.o.incsearch = true     -- Incremental search
+vim.o.ignorecase = true    -- Ignore case in search patterns
+vim.o.smartcase = true     -- Override ignorecase if search pattern contains uppercase letters
+vim.o.wrap = false         -- Disable line wrap
+vim.o.cursorline = true    -- Highlight the current line
 vim.o.termguicolors = true -- Enable true color support
-vim.o.signcolumn = "yes" -- Always show the sign column
+vim.o.signcolumn = "yes"   -- Always show the sign column
 
 -- From TheVimeagen vim from scratch video
 
@@ -85,9 +85,12 @@ vim.opt.hlsearch = true
 
 -- NOTE: yank highlight
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
+
+
+
