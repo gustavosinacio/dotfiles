@@ -1,22 +1,49 @@
 return {
-	"folke/tokyonight.nvim",
+	"catppuccin/nvim",
 	lazy = false,
+	name = "catppuccin",
 	priority = 1000,
-	opts = {},
 	config = function()
-		require("tokyonight").setup({
-			-- use the night style
-			style = "night",
-			-- disable italic for functions
-			styles = {
-				functions = {},
+		require("catppuccin").setup({
+			flavour = "mocha", -- latte, frappe, macchiato, mocha
+			transparent_background = true,
+			integrations = {
+				cmp = true,
+				gitsigns = true,
+				treesitter = true,
+				harpoon = true,
+				telescope = true,
+				mason = true,
+				noice = true,
+				notify = true,
+				which_key = true,
+				fidget = true,
+				native_lsp = {
+					enabled = true,
+					virtual_text = {
+						errors = { "italic" },
+						hints = { "italic" },
+						warnings = { "italic" },
+						information = { "italic" },
+					},
+					underlines = {
+						errors = { "underline" },
+						hints = { "underline" },
+						warnings = { "underline" },
+						information = { "underline" },
+					},
+					inlay_hints = {
+						background = true,
+					},
+				},
+				mini = {
+					enabled = true,
+					indentscope_color = "",
+				},
 			},
-			sidebars = { "qf", "vista_kind", "terminal", "packer" },
-			-- Change the "hint" color to the "orange" color, and make the "error" color bright red
-			on_colors = function(colors)
-				colors.hint = colors.orange
-				colors.error = "#ff0000"
-			end,
 		})
+
+		-- setup must be called before loading
+		vim.cmd.colorscheme("catppuccin-mocha")
 	end,
 }
