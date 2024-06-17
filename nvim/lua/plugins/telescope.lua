@@ -1,5 +1,9 @@
 return {
   {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  },
+  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
     dependencies = {
@@ -10,14 +14,12 @@ return {
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
-
     lazy = false,
     config = function()
       -- Telescope Configurations
       local telescope = require("telescope")
       local actions = require("telescope.actions")
       local builtin = require("telescope.builtin")
-
       --
       -- More info about mappings can be found in:
       -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
@@ -82,7 +84,16 @@ return {
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
       end, { desc = "[S]earch [N]eovim files" })
 
+      -- open file_browser with the path of the current buffer
+      vim.keymap.set(
+        "n",
+        "<space>fb",
+        ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+        { desc = "[F]ile [B]rowse" }
+      )
+
       telescope.load_extension("live_grep_args")
+      telescope.load_extension("file_browser")
     end,
   },
   {

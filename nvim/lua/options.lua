@@ -87,10 +87,24 @@ vim.opt.hlsearch = true
 -- NOTE: yank highlight
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  group = vim.api.nvim_create_augroup("custom-highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
 })
 
+vim.api.nvim_create_autocmd("RecordingEnter", {
+  group = vim.api.nvim_create_augroup("custom-recording", { clear = true }),
+  desc = "show recording status",
+  callback = function()
+    print("entered recording")
+  end,
+})
 
+vim.api.nvim_create_autocmd("RecordingLeave", {
+  group = vim.api.nvim_create_augroup("custom-recording", { clear = true }),
+  desc = "show recording status",
+  callback = function()
+    print("recording finished")
+  end,
+})
