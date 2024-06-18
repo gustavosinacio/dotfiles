@@ -7,7 +7,7 @@ opacity = 0.97
 padding = { x = 0, y = 0 }
 
 [font]
-size = 17
+size = 13
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -15,7 +15,7 @@ style = "Heavy"
 
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font"
-style = "Heavy Italic"
+style = "Bold Italic"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
@@ -23,77 +23,37 @@ style = "Medium Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-style = "Medium"
+style = "Regular"
+
 
 [shell]
-program = "/opt/homebrew/bin/tmux"
+program = "/usr/bin/zsh"
 
 # # Colors (Blood Moon)
 # # Default colors
-# [colors.primary]
-#   background = '#10100E'
-#   foreground = '#C6C6C4'
-#
-# # Normal colors
-# [colors.normal]
-#   black   = '#10100E'
-#   red     = '#C40233'
-#   green   = '#009F6B'
-#   yellow  = '#FFD700'
-#   blue    = '#0087BD'
-#   magenta = '#9A4EAE'
-#   cyan    = '#20B2AA'
-#   white   = '#C6C6C4'
-#
-# # Bright colors
-# [colors.bright]
-#   black   = '#696969'
-#   red     = '#FF2400'
-#   green   = '#03C03C'
-#   yellow  = '#FDFF00'
-#   blue    = '#007FFF'
-#   magenta = '#FF1493'
-#   cyan    = '#00CCCC'
-#   white   = '#FFFAFA'
-
-
-# TokyoNight Alacritty Colors
-# Default colors
 [colors.primary]
-background = '#101010'
-foreground = '#c0caf5'
-
-#[colors.cursor]
-#cursor = '#c0caf5'
-#text = '#24283b'
+  background = '#10100E'
+  foreground = '#C6C6C4'
 
 # Normal colors
 [colors.normal]
-black = '#1d202f'
-red = '#f7768e'
-green = '#9ece6a'
-yellow = '#e0af68'
-blue = '#7aa2f7'
-magenta = '#bb9af7'
-cyan = '#7dcfff'
-white = '#a9b1d6'
+  black   = '#101020'
+  red     = '#C40233'
+  green   = '#009F6B'
+  yellow  = '#FFD700'
+  blue    = '#0087BD'
+  magenta = '#9A4EAE'
+  cyan    = '#20B2AA'
+  white   = '#C6C6C4'
 
 # Bright colors
 [colors.bright]
-black = '#414868'
-red = '#f7768e'
-green = '#9ece6a'
-yellow = '#e0af68'
-blue = '#7aa2f7'
-magenta = '#bb9af7'
-cyan = '#7dcfff'
-white = '#c0caf5'
+  black   = '#696969'
+  red     = '#FF2400'
+  green   = '#03C03C'
+  yellow  = '#FDFF00'
+  blue    = '#007FFF'
+  magenta = '#FF1493'
+  cyan    = '#00CCCC'
+  white   = '#FFFAFA'
 
-# Indexed Colors
-[[colors.indexed_colors]]
-index = 16
-color = '#ff9e64'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#db4b4b'
