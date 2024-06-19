@@ -91,7 +91,7 @@ console_title_template = '{{ .Folder }}'
     background = '#17D7A0'
     leading_diamond = ''
     trailing_diamond = ''
-    template = '   {{ round .PhysicalPercentUsed .Precision }}% {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB   '
+    template = '   {{ round .PhysicalPercentUsed .Precision }}% {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB '
 
     [blocks.segments.properties]
       branch_icon = ' '
