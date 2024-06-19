@@ -28,14 +28,14 @@ return {
 				defaults = {
 					file_ignore_patterns = { "node_modules" }, -- Ignore certain directories
 					follow = true, -- Follow symbolic links
-					mappings = {
-						i = {
-							["<CR>"] = actions.select_tab,
-						},
-						n = {
-							["<CR>"] = actions.select_tab,
-						},
-					},
+					-- mappings = {
+					-- 	i = {
+					-- 		["<CR>"] = actions.select_tab,
+					-- 	},
+					-- 	n = {
+					-- 		["<CR>"] = actions.select_tab,
+					-- 	},
+					-- },
 				},
 				extensions = {
 					live_grep_args = {
