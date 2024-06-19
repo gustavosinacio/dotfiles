@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver" },
+				ensure_installed = { "lua_ls", "tsserver", "gopls" },
 				automatic_installation = true,
 			})
 		end,
@@ -33,7 +33,7 @@ return {
 			-- }
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local servers = { "lua_ls", "tsserver" }
+			local servers = { "lua_ls", "tsserver", "gopls" }
 
 			for _, lsp in ipairs(servers) do
 				lspconfig[lsp].setup({
