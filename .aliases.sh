@@ -16,19 +16,15 @@ alias gcom="git checkout main"
 # Architectures ----------------------------------------------------------------
 alias intel="/usr/bin/arch -x86_64 /bin/zsh"
 alias arm="/usr/bin/arch -arm64 /bin/zsh"
-alias ipod='/usr/local/bin/pod'
-# alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias ibrew='arch -x86_64 /usr/local/opt/brew/bin/brew'
-alias mbrew='arch -arm64 /opt/homebrew/bin/brew'
+# alias ipod='/usr/local/bin/pod'
+# alias ibrew='arch -x86_64 /usr/local/opt/brew/bin/brew'
+# alias mbrew='arch -arm64 /opt/homebrew/bin/brew'
 
 alias testnode="node -e \"console.log(process.arch)\""
 alias creat-intel-node="ln -s $(which node) /usr/local/bin/node"
 alias creat-arm-node="ln -s $(which node) /opt/homebrew/bin/node"
 
 alias android-build="npx react-native run-android --variant=stagingDebug --no-jetifier"
-
-# Configs ----------------------------------------------------------------------
-alias zshconfig="code ~/.zshrc"
 
 # Docker -----------------------------------------------------------------------
 alias docker-ip="docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
@@ -47,3 +43,5 @@ alias rr="ranger"
 alias echo="echo -e"
 
 alias gw='cd ~/workhub'
+
+alias cls='clear'
