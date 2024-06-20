@@ -13,10 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +7 ~/dotfiles/nvim/lua/plugins/markdown-preview.lua
+badd +19 ~/dotfiles/nvim/COMMANDS.md
+badd +19 ~/.config/nvim/init.lua
 argglobal
 %argdel
-edit ~/dotfiles/nvim/lua/plugins/markdown-preview.lua
+edit ~/dotfiles/nvim/COMMANDS.md
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -35,7 +36,6 @@ set winminwidth=0
 set winwidth=1
 wincmd =
 argglobal
-balt COMMANDS.md
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -46,16 +46,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 7 - ((6 * winheight(0) + 27) / 55)
+let s:l = 19 - ((18 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
-normal! 06|
+keepjumps 19
+normal! 059|
 wincmd w
 argglobal
-enew | setl bt=help
-help Insert-mode@en
+if bufexists(fnamemodify("~/.config/nvim/init.lua", ":p")) | buffer ~/.config/nvim/init.lua | else | edit ~/.config/nvim/init.lua | endif
+if &buftype ==# 'terminal'
+  silent file ~/.config/nvim/init.lua
+endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -63,16 +65,17 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal nofen
+setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 72 - ((26 * winheight(0) + 27) / 55)
+let s:l = 19 - ((18 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 72
-normal! 0
+keepjumps 19
+normal! 022|
 wincmd w
+2wincmd w
 wincmd =
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

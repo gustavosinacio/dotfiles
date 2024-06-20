@@ -7,7 +7,6 @@ export RANGER_LOAD_DEFAULT_RC='false'
 echo $ZSH_CUSTOM
 
 plugins=(
-  git
   zsh-autosuggestions
   zsh-completions
 )
