@@ -17,4 +17,4 @@ require("options")
 require("keymaps")
 require("lazy").setup("plugins")
 
-require("custom.completion")
+-- require("custom.completion")

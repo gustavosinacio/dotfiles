@@ -2,7 +2,7 @@ local myOS = vim.loop.os_uname().sysname
 local pureMainMod = "A"
 
 if myOS == "Darwin" then
-	pureMainMod = "D"
+  pureMainMod = "D"
 end
 
 MainMod = "<" .. pureMainMod .. "-"
@@ -28,3 +28,10 @@ vim.keymap.set("n", "<S-Tab>", ":tabn<CR>", { noremap = true })
 -- Tabs -
 vim.keymap.set("n", "<leader>tmh", ":-tabmove<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>tml", ":+tabmove<CR>", { noremap = true })
+
+-- Window resizing-
+vim.keymap.set("n", "<M-=>", "<C-w>+")
+vim.keymap.set("n", "<M-->", "<C-w>-")
+vim.keymap.set("n", "<M-,>", "<C-w>2<")
+vim.keymap.set("n", "<M-.>", "<C-w>2>")
+vim.keymap.set("n", "<leader>x", ":source %<CR>")
