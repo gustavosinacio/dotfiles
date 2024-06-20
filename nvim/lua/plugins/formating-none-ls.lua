@@ -80,7 +80,6 @@ return {
           null_ls.builtins.formatting.gofumpt,
           null_ls.builtins.formatting.goimports,
           null_ls.builtins.formatting.golines,
-          null_ls.builtins.formatting.beautysh,
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.isort,
         },

@@ -49,6 +49,7 @@ return {
 					{ name = "buffer" },
 				}),
 			})
+			print("LOADED WRONG COMPLETIONS")
 		end,
 	},
 }

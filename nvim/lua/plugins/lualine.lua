@@ -9,7 +9,7 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>hl", function()
-			print(require("lualine").get_config())
+			require("lualine").get_config()
 		end)
 	end,
 }

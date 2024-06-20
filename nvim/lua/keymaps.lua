@@ -14,7 +14,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagn
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", { desc = "Save file" })
+vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", { desc = "[G]o [G]it" })
 
 vim.keymap.set("n", "<leader>ll", ":Lazy<CR>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
