@@ -16,8 +16,6 @@ vim.o.cursorline = true -- Highlight the current line
 vim.o.termguicolors = true -- Enable true color support
 vim.o.signcolumn = "yes" -- Always show the sign column
 
--- From TheVimeagen vim from scratch video
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -93,20 +91,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("RecordingEnter", {
-	group = vim.api.nvim_create_augroup("custom-recording", { clear = true }),
-	desc = "show recording status",
-	callback = function()
-		vim.opt.cmdheight = 1
-		print("entered recording")
-	end,
-})
-
 vim.api.nvim_create_autocmd("RecordingLeave", {
 	group = vim.api.nvim_create_augroup("custom-recording", { clear = true }),
 	desc = "show recording status",
 	callback = function()
-		vim.opt.cmdheight = 0
-		print("recording finished")
+		print("Finished recording '" .. vim.fn.reg_recording() .. "'")
 	end,
 })

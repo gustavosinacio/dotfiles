@@ -14,7 +14,6 @@ return {
     config = function()
       -- Telescope Configurations
       local telescope = require("telescope")
-      local actions = require("telescope.actions")
       local builtin = require("telescope.builtin")
       --
       -- More info about mappings can be found in:
@@ -23,7 +22,7 @@ return {
       telescope.setup({
         defaults = {
           file_ignore_patterns = { "node_modules" }, -- Ignore certain directories
-          follow = true, -- Follow symbolic links
+          follow = true,                        -- Follow symbolic links
           -- mappings = {
           -- 	i = {
           -- 		["<CR>"] = actions.select_tab,
@@ -122,3 +121,4 @@ return {
     end,
   },
 }
+
