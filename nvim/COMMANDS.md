@@ -17,3 +17,9 @@
 | CTRL-U        | Delete all entered characters before the cursor in the current line.                                     |
 | CTRL-T CTRL-D | **Insert/delete** indent at the start of the current line                                                |
 | CTRL-E CTRL-Y | Insert the character which is **above/below** the cursor.                                                |
+
+##
+
+| Keystroke | Description       |
+| :-------- | :---------------- |
+| ZZ        | Save all and quit |

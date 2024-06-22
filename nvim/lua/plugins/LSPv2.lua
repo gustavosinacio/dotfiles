@@ -2,17 +2,30 @@ return { -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
-    { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
+    {
+      "williamboman/mason.nvim",
+      config = true,
+    }, -- NOTE: Must be loaded before dependants
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { "j-hui/fidget.nvim", opts = {} },
+    { "j-hui/fidget.nvim",    opts = {} },
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    { "folke/neodev.nvim", opts = {} },
+    {
+      "folke/lazydev.nvim",
+      ft = "lua",
+      opts = {
+        library = {
+          -- Load luvit types when the `vim.uv` word is found
+          { path = "luvit-meta/library", words = { "vim%.uv" } },
+        },
+      },
+    },
+    { "Bilal2453/luvit-meta", lazy = true },
   },
   config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -115,6 +128,7 @@ return { -- LSP Configuration & Plugins
       gopls = {},
       pyright = {},
       tsserver = {},
+      eslint = {},
       bashls = {},
       taplo = {},
       lua_ls = {
@@ -134,7 +148,15 @@ return { -- LSP Configuration & Plugins
     --  other tools, you can run
     --    :Mason
     --
-    require("mason").setup()
+    require("mason").setup({
+      ui = {
+        icons = {
+          package_installed = "✓✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
 
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.

@@ -36,7 +36,7 @@ return {
           single_attribute_per_line = false,
           single_quote = false,
           tab_width = 2,
-          trailing_comma = "es5",
+          trailing_comma = "all",
           use_tabs = false,
           vue_indent_script_and_style = false,
         },
@@ -81,6 +81,7 @@ return {
           null_ls.builtins.formatting.goimports,
           null_ls.builtins.formatting.golines,
           null_ls.builtins.formatting.black,
+          null_ls.builtins.formatting.eslint,
         },
       })
     end,
