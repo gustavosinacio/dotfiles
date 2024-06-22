@@ -1,0 +1,48 @@
+return {
+  "mfussenegger/nvim-dap",
+  config = function()
+    local dap = require("dap")
+
+    vim.keymap.set("n", "<leader>dc", function()
+      dap.continue()
+    end, { desc = "Debug [C]ontinue" })
+
+    vim.keymap.set("n", "<leader>do", function()
+      dap.step_over()
+    end, { desc = "Debug step [O]ver" })
+
+    vim.keymap.set("n", "<leader>di", function()
+      dap.step_into()
+    end, { desc = "Debug step [I]nto" })
+
+    vim.keymap.set("n", "<leader>dt", function()
+      dap.step_out()
+    end, { desc = "Debug step ou[T]" })
+
+    vim.keymap.set("n", "<leader>b", function()
+      dap.toggle_breakpoint()
+    end, { desc = "Debug toggle [B]reakpoint" })
+
+    vim.keymap.set("n", "<Leader>dl", function()
+      require("dap").run_last()
+    end, { desc = "Debug run [L]ast" })
+
+    vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
+      require("dap.ui.widgets").hover()
+    end, { desc = "Debug widgets hover (?)" })
+
+    vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
+      require("dap.ui.widgets").preview()
+    end, { desc = "Debug widgets preview (?)" })
+
+    vim.keymap.set("n", "<Leader>df", function()
+      local widgets = require("dap.ui.widgets")
+      widgets.centered_float(widgets.frames)
+    end, { desc = "Debug widgets centered float frames (??)" })
+
+    vim.keymap.set("n", "<Leader>ds", function()
+      local widgets = require("dap.ui.widgets")
+      widgets.centered_float(widgets.scopes)
+    end, { desc = "Debug centered float scopes" })
+  end,
+}
