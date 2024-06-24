@@ -54,7 +54,6 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
           ["<C-s>"] = cmp.mapping.complete({}),
 
@@ -63,11 +62,27 @@ return {
               luasnip.expand_or_jump()
             end
           end, { "i", "s" }),
+
           ["<C-h>"] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
             end
           end, { "i", "s" }),
+
+          ["<Tab>"] = function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            else
+              fallback()
+            end
+          end,
+          ["<S-Tab>"] = function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            else
+              fallback()
+            end
+          end,
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps

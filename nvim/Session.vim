@@ -13,11 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +19 ~/dotfiles/nvim/COMMANDS.md
-badd +19 ~/.config/nvim/init.lua
+badd +6 lua/plugins/DAP-go.lua
+badd +74 ~/dotfiles/nvim/lua/plugins/debugging.lua
 argglobal
 %argdel
-edit ~/dotfiles/nvim/COMMANDS.md
+edit lua/plugins/DAP-go.lua
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -36,6 +36,7 @@ set winminwidth=0
 set winwidth=1
 wincmd =
 argglobal
+balt ~/dotfiles/nvim/lua/plugins/debugging.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -46,18 +47,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 23) / 46)
+let s:l = 6 - ((5 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
-normal! 059|
+keepjumps 6
+normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/.config/nvim/init.lua", ":p")) | buffer ~/.config/nvim/init.lua | else | edit ~/.config/nvim/init.lua | endif
+if bufexists(fnamemodify("~/dotfiles/nvim/lua/plugins/debugging.lua", ":p")) | buffer ~/dotfiles/nvim/lua/plugins/debugging.lua | else | edit ~/dotfiles/nvim/lua/plugins/debugging.lua | endif
 if &buftype ==# 'terminal'
-  silent file ~/.config/nvim/init.lua
+  silent file ~/dotfiles/nvim/lua/plugins/debugging.lua
 endif
+balt lua/plugins/DAP-go.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -68,12 +70,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 23) / 46)
+let s:l = 74 - ((36 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
-normal! 022|
+keepjumps 74
+normal! 027|
 wincmd w
 2wincmd w
 wincmd =
