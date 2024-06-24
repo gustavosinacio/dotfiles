@@ -33,6 +33,10 @@
   unstage = reset HEAD --
   undo = checkout --
 
+
+  wt = worktree
+  wta = worktree add
+
 [core]
   autocrlf = false
   pager = cat

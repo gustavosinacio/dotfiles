@@ -7,6 +7,14 @@ return {
       dap.continue()
     end, { desc = "Debug [C]ontinue" })
 
+    vim.keymap.set("n", "<leader>dd", function()
+      dap.disconnect()
+    end, { desc = "Debug [D]isconnect" })
+
+    vim.keymap.set("n", "<leader>dr", function()
+      dap.restart()
+    end, { desc = "Debug [R]estart" })
+
     vim.keymap.set("n", "<leader>do", function()
       dap.step_over()
     end, { desc = "Debug step [O]ver" })
