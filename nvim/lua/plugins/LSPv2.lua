@@ -11,7 +11,7 @@ return { -- LSP Configuration & Plugins
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { "j-hui/fidget.nvim",    opts = {} },
+    { "j-hui/fidget.nvim", opts = {} },
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
@@ -125,29 +125,26 @@ return { -- LSP Configuration & Plugins
     -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
     local servers = {
-      gopls = {},
       pyright = {},
       tsserver = {},
       eslint = {},
       bashls = {},
       taplo = {},
-      lua_ls = {
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = "Replace",
-            },
-            -- diagnostics = { disable = { 'missing-fields' } },
-          },
-        },
-      },
+      yamlls = {},
     }
+
+    local go = require("custom.LSPs.go")
+    -- require("custom.LSPs.gov2")
+    local lua_ls = require("custom.LSPs.lua")
+
+    servers = vim.tbl_deep_extend("force", servers, go)
+    servers = vim.tbl_deep_extend("force", servers, lua_ls)
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
     --  other tools, you can run
     --    :Mason
-    --
+
     require("mason").setup({
       ui = {
         icons = {
@@ -161,9 +158,7 @@ return { -- LSP Configuration & Plugins
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      "stylua", -- Used to format Lua code
-    })
+    vim.list_extend(ensure_installed, {})
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
     require("mason-lspconfig").setup({
@@ -174,6 +169,9 @@ return { -- LSP Configuration & Plugins
           -- by the server configuration above. Useful when disabling
           -- certain features of an LSP (for example, turning off formatting for tsserver)
           server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+
+          if server_name == "gopls" then
+          end
           require("lspconfig")[server_name].setup(server)
         end,
       },

@@ -5,7 +5,7 @@ return {
   opts = {},
   config = function()
     require("tokyonight").setup({
-      style = "night",     -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+      style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
       light_style = "storm", -- The theme is used when the background is set to light
       transparent = false, -- Enable this to disable setting the background color
       terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
@@ -17,13 +17,13 @@ return {
         functions = {},
         variables = {},
         -- Background styles. Can be "dark", "transparent" or "normal"
-        sidebars = "light",                 -- style for sidebars, see below
-        floats = "light",                   -- style for floating windows
+        sidebars = "light", -- style for sidebars, see below
+        floats = "light", -- style for floating windows
       },
       sidebars = { "qf", "help", "terminal" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-      hide_inactive_statusline = false,     -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-      dim_inactive = true,                  -- dims inactive windows
-      lualine_bold = true,                  -- When `true`, section headers in the lualine theme will be bold
+      hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+      dim_inactive = true, -- dims inactive windows
+      lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
       --- You can override specific color groups to use other groups or a hex color
       --- function will be called with a ColorScheme table
       ---@param colors ColorScheme

@@ -19,8 +19,8 @@ return {
       enable_git_status = true,
       enable_diagnostics = true,
       open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
-      sort_case_insensitive = false,                                  -- used when sorting files and directories in the tree
-      sort_function = nil,                                            -- use a custom function for sorting files and directories in the tree
+      sort_case_insensitive = false, -- used when sorting files and directories in the tree
+      sort_function = nil, -- use a custom function for sorting files and directories in the tree
       -- sort_function = function (a,b)
       --       if a.type == b.type then
       --           return a.path > b.path
@@ -232,7 +232,7 @@ return {
             ["gu"] = "git_unstage_file",
             ["ga"] = "git_add_file",
             ["gr"] = "git_revert_file",
-            ["gc"] = "git_commit",
+            -- ["gc"] = "git_commit",
             ["gp"] = "git_push",
             ["gg"] = "git_commit_and_push",
             ["o"] = { "show_help", nowait = false, config = { title = "Order by", prefix_key = "o" } },
