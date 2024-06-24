@@ -48,7 +48,7 @@ return {
     dependencies = {
       {
         "williamboman/mason.nvim",
-        opts = { ensure_installed = { "gomodifytags", "impl" } },
+        opts = {},
       },
     },
     config = function()
