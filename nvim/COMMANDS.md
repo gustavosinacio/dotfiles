@@ -20,6 +20,7 @@
 
 ##
 
-| Keystroke | Description       |
-| :-------- | :---------------- |
-| ZZ        | Save all and quit |
+| Keystroke | Description                                    |
+| :-------- | :--------------------------------------------- |
+| ZZ        | Save all and quit                              |
+| 5i        | enter insert mode and insert the typed 5 times |
