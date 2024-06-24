@@ -1,7 +1,7 @@
 -- My config for nvim
 -- General Settings
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
+vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
@@ -84,17 +84,17 @@ vim.opt.hlsearch = true
 
 -- NOTE: yank highlight
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("custom-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("custom-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 vim.api.nvim_create_autocmd("RecordingLeave", {
-	group = vim.api.nvim_create_augroup("custom-recording", { clear = true }),
-	desc = "show recording status",
-	callback = function()
-		print("Finished recording '" .. vim.fn.reg_recording() .. "'")
-	end,
+  group = vim.api.nvim_create_augroup("custom-recording", { clear = true }),
+  desc = "show recording status",
+  callback = function()
+    print("Finished recording '" .. vim.fn.reg_recording() .. "'")
+  end,
 })

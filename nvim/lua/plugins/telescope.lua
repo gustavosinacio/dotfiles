@@ -22,7 +22,7 @@ return {
       telescope.setup({
         defaults = {
           file_ignore_patterns = { "node_modules" }, -- Ignore certain directories
-          follow = true,                        -- Follow symbolic links
+          follow = true, -- Follow symbolic links
           -- mappings = {
           -- 	i = {
           -- 		["<CR>"] = actions.select_tab,
@@ -121,4 +121,3 @@ return {
     end,
   },
 }
-

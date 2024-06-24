@@ -45,6 +45,12 @@ return {
   },
   {
     "nvimtools/none-ls.nvim",
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = { ensure_installed = { "gomodifytags", "impl" } },
+      },
+    },
     config = function()
       local null_ls = require("null-ls")
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -54,7 +60,10 @@ return {
           if client.supports_method("textDocument/formatting") then
             vim.keymap.set("n", "<leader>f", function()
               vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-            end, { buffer = bufnr, desc = "[F]ormat" })
+            end, {
+              buffer = bufnr,
+              desc = "[F]ormat",
+            })
 
             vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
             vim.api.nvim_create_autocmd("BufWritePre", {
@@ -69,19 +78,28 @@ return {
           if client.supports_method("textDocument/rangeFormatting") then
             vim.keymap.set("x", "<leader>f", function()
               vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-            end, { buffer = bufnr, desc = "[LSP] format" })
+            end, {
+              buffer = bufnr,
+              desc = "[LSP] format",
+            })
           end
         end,
         sources = {
-          -- require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
-          -- null_ls.builtins.diagnostics.eslint_d,
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.prettier,
+          --go
           null_ls.builtins.formatting.gofumpt,
           null_ls.builtins.formatting.goimports,
           null_ls.builtins.formatting.golines,
+          null_ls.builtins.code_actions.gomodifytags,
+          null_ls.builtins.code_actions.impl,
+
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.eslint,
+          -- yaml
+          null_ls.builtins.formatting.yamlfix,
+          null_ls.builtins.formatting.yamllint,
+          null_ls.builtins.formatting.yamlfmt,
         },
       })
     end,
