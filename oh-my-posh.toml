@@ -100,7 +100,6 @@ console_title_template = '{{ .Folder }}'
       fetch_upstream_icon = true
       fetch_worktree_count = true
 
-
   [[blocks.segments]]
     type = 'node'
     style = 'powerline'
@@ -109,7 +108,13 @@ console_title_template = '{{ .Folder }}'
     background = '#3Ca35E'
     template = '  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} '
 
-   
+  [[blocks.segments]]
+    type = "go"
+    style = "powerline"
+    powerline_symbol = ""
+    foreground = "#000000"
+    background = "#7FD5EA"
+    template = "   {{ .Full }} "
 
 
 [[blocks]]
@@ -139,10 +144,12 @@ console_title_template = '{{ .Folder }}'
     type = 'path'
     style = 'plain'
     template = ' {{ .Path }} '
+    foreground = "#979696"
 
     [blocks.segments.properties]
+      style = "full"
       folder_icon = ' '
-      folder_separator_icon = '  '
+      folder_separator_icon = ' '
       home_icon = ' '
 
 [[blocks]]
