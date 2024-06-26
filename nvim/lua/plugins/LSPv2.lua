@@ -150,6 +150,16 @@ return { -- LSP Configuration & Plugins
       end,
     })
 
+    require("mason").setup({
+      ui = {
+        icons = {
+          package_installed = "✓✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
     -- LSP servers and clients are able to communicate to each other what features they support.
     --  By default, Neovim doesn't support everything that is in the LSP specification.
     --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
@@ -161,14 +171,6 @@ return { -- LSP Configuration & Plugins
       require("cmp_nvim_lsp").default_capabilities()
     )
 
-    --  Add any additional override configuration in the following tables. Available keys are:
-    --  - cmd (table): Override the default command used to start the server
-    --  - filetypes (table): Override the default list of associated filetypes for the server
-    --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-    --  - settings (table): Override the default settings passed when initializing the server.
-    --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-    -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-
     local servers = {
       pyright = {},
       tsserver = {},
@@ -179,33 +181,49 @@ return { -- LSP Configuration & Plugins
     }
 
     local go = require("custom.LSPs.go")
-    local lua_ls = require("custom.LSPs.lua")
+    local lua = require("custom.LSPs.lua")
 
     servers = vim.tbl_deep_extend("force", servers, go)
-    servers = vim.tbl_deep_extend("force", servers, lua_ls)
+    servers = vim.tbl_deep_extend("force", servers, lua)
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
     --  other tools, you can run
     --    :Mason
-
-    require("mason").setup({
-      ui = {
-        icons = {
-          package_installed = "✓✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
-
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {})
     require("mason-tool-installer").setup({
       ensure_installed = ensure_installed,
     })
+
+    vim.cmd([[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]])
+    vim.cmd(
+      [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
+    )
+
+    local border = {
+      { " ", "FloatBorder" },
+      { "▔", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { "", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { "▁", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { "", "FloatBorder" },
+    }
+
+    -- LSP settings (for overriding per client)
+    local handlers = {
+      ["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover,
+        { border = border }
+      ),
+      ["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help,
+        { border = border }
+      ),
+    }
 
     require("mason-lspconfig").setup({
       handlers = {
@@ -220,12 +238,20 @@ return { -- LSP Configuration & Plugins
             capabilities,
             server.capabilities or {}
           )
+          server.handlers = handlers
 
-          if server_name == "gopls" then
-          end
           require("lspconfig")[server_name].setup(server)
         end,
       },
+    })
+
+    -- Change the behavior of the disgnostic information display
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      update_in_insert = true,
+      severity_sort = false,
     })
   end,
 }

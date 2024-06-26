@@ -44,6 +44,10 @@ return {
         },
         completion = { completeopt = "menu,menuone,noinsert" },
 
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         -- Read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert({
           ["<C-n>"] = cmp.mapping.complete({}),

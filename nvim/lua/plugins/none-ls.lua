@@ -1,59 +1,55 @@
 return {
   {
-    "MunifTanjim/prettier.nvim",
-    config = function()
-      local prettier = require("prettier")
-
-      prettier.setup({
-        bin = "prettier", -- or `'prettierd'` (v0.23.3+)
-        filetypes = {
-          "css",
-          "graphql",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "json",
-          "less",
-          "markdown",
-          "scss",
-          "typescript",
-          "typescriptreact",
-          "yaml",
-        },
-        cli_options = {
-          arrow_parens = "always",
-          bracket_spacing = true,
-          bracket_same_line = false,
-          embedded_language_formatting = "auto",
-          end_of_line = "lf",
-          html_whitespace_sensitivity = "css",
-          -- jsx_bracket_same_line = false,
-          jsx_single_quote = false,
-          print_width = 80,
-          prose_wrap = "preserve",
-          quote_props = "as-needed",
-          semi = false,
-          single_attribute_per_line = false,
-          single_quote = false,
-          tab_width = 2,
-          trailing_comma = "all",
-          use_tabs = false,
-          vue_indent_script_and_style = false,
-        },
-      })
-    end,
-  },
-  {
     "nvimtools/none-ls.nvim",
     dependencies = {
       {
         "williamboman/mason.nvim",
-        opts = {},
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "nvimtools/none-ls-extras.nvim",
       },
     },
     config = function()
       local null_ls = require("null-ls")
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+      local formattersAndLinters = {
+        "stylua",
+        "prettier",
+        "gofumpt",
+        "goimports",
+        "golines",
+        "black",
+        -- "yamlfix",
+        -- "yamlfmt",
+      }
+
+      local codeActions = {
+        "gomodifytags",
+        "impl",
+      }
+
+      local diagnostics = {
+        "eslint",
+        "yamllint",
+      }
+
+      require("mason-tool-installer").setup({
+        ensure_installed = formattersAndLinters,
+      })
+
+      local sources = {}
+
+      for _, name in ipairs(formattersAndLinters) do
+        table.insert(sources, null_ls.builtins.formatting[name])
+      end
+
+      for _, name in ipairs(codeActions) do
+        table.insert(sources, null_ls.builtins.code_actions[name])
+      end
+
+      for _, name in ipairs(diagnostics) do
+        table.insert(sources, require("none-ls.diagnostics." .. name))
+      end
 
       null_ls.setup({
         on_attach = function(client, bufnr)
@@ -84,23 +80,7 @@ return {
             })
           end
         end,
-        sources = {
-          null_ls.builtins.formatting.stylua,
-          null_ls.builtins.formatting.prettier,
-          --go
-          null_ls.builtins.formatting.gofumpt,
-          null_ls.builtins.formatting.goimports,
-          null_ls.builtins.formatting.golines,
-          null_ls.builtins.code_actions.gomodifytags,
-          null_ls.builtins.code_actions.impl,
-
-          null_ls.builtins.formatting.black,
-          null_ls.builtins.formatting.eslint,
-          -- yaml
-          null_ls.builtins.formatting.yamlfix,
-          null_ls.builtins.formatting.yamllint,
-          null_ls.builtins.formatting.yamlfmt,
-        },
+        sources = sources,
       })
     end,
   },
