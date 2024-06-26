@@ -11,7 +11,7 @@ return { -- LSP Configuration & Plugins
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { "j-hui/fidget.nvim", opts = {} },
+    { "j-hui/fidget.nvim",    opts = {} },
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
@@ -197,34 +197,6 @@ return { -- LSP Configuration & Plugins
       ensure_installed = ensure_installed,
     })
 
-    vim.cmd([[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]])
-    vim.cmd(
-      [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
-    )
-
-    local border = {
-      { " ", "FloatBorder" },
-      { "▔", "FloatBorder" },
-      { " ", "FloatBorder" },
-      { "", "FloatBorder" },
-      { " ", "FloatBorder" },
-      { "▁", "FloatBorder" },
-      { " ", "FloatBorder" },
-      { "", "FloatBorder" },
-    }
-
-    -- LSP settings (for overriding per client)
-    local handlers = {
-      ["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover,
-        { border = border }
-      ),
-      ["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
-        { border = border }
-      ),
-    }
-
     require("mason-lspconfig").setup({
       handlers = {
         function(server_name)
@@ -238,7 +210,6 @@ return { -- LSP Configuration & Plugins
             capabilities,
             server.capabilities or {}
           )
-          server.handlers = handlers
 
           require("lspconfig")[server_name].setup(server)
         end,
