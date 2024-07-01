@@ -29,7 +29,7 @@ return {
       }
 
       local diagnostics = {
-        "eslint",
+        "eslint_d",
         "yamllint",
       }
 
@@ -51,11 +51,29 @@ return {
         table.insert(sources, require("none-ls.diagnostics." .. name))
       end
 
+      function filterServers(client, excluded_names)
+        for _, name in ipairs(excluded_names) do
+          if client.name == name then
+            return false
+          end
+        end
+        return true
+      end
+
+      local filterServerNames = { "tsserver" }
+
       null_ls.setup({
         on_attach = function(client, bufnr)
           if client.supports_method("textDocument/formatting") then
             vim.keymap.set("n", "<leader>f", function()
-              vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+              vim.lsp.buf.format({
+                bufnr = vim.api.nvim_get_current_buf(),
+                -- Exclude listed formatters from LSP servers
+                -- This is done to avoid multiple formatting
+                filter = function(client)
+                  return filterServers(client, filterServerNames)
+                end,
+              })
             end, {
               buffer = bufnr,
               desc = "[F]ormat",
@@ -66,14 +84,28 @@ return {
               group = augroup,
               buffer = bufnr,
               callback = function()
-                vim.lsp.buf.format({ async = false })
+                vim.lsp.buf.format({
+                  async = false,
+                  -- Exclude listed formatters from LSP servers
+                  -- This is done to avoid multiple formatting
+                  filter = function(client)
+                    return filterServers(client, filterServerNames)
+                  end,
+                })
               end,
             })
           end
 
           if client.supports_method("textDocument/rangeFormatting") then
             vim.keymap.set("x", "<leader>f", function()
-              vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+              vim.lsp.buf.format({
+                bufnr = vim.api.nvim_get_current_buf(),
+                -- Exclude listed formatters from LSP servers
+                -- This is done to avoid multiple formatting
+                filter = function(client)
+                  return filterServers(client, filterServerNames)
+                end,
+              })
             end, {
               buffer = bufnr,
               desc = "[LSP] format",

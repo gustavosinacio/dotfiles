@@ -1,0 +1,11 @@
+# .blacklist [
+#   "kitty"
+#   "terminal"
+#   "alacritty"
+# ]
+
+# open terminal, blazingly fast compared to iTerm/Hyper
+cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# open mpv
+cmd - m : open -na /Applications/mpv.app $(pbpaste)

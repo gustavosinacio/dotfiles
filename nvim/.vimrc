@@ -38,4 +38,4 @@ set noshowmode
 "set cursorbind
 "set scrollbind
 
-
+set conceallevel=1

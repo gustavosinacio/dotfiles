@@ -173,8 +173,6 @@ return { -- LSP Configuration & Plugins
 
     local servers = {
       pyright = {},
-      tsserver = {},
-      eslint = {},
       bashls = {},
       taplo = {},
       yamlls = {},
@@ -182,9 +180,11 @@ return { -- LSP Configuration & Plugins
 
     local go = require("custom.LSPs.go")
     local lua = require("custom.LSPs.lua")
+    local js = require("custom.LSPs.js")
 
     servers = vim.tbl_deep_extend("force", servers, go)
     servers = vim.tbl_deep_extend("force", servers, lua)
+    servers = vim.tbl_deep_extend("force", servers, js)
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
