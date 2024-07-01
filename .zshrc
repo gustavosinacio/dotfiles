@@ -3,6 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='nvim'
 export RANGER_LOAD_DEFAULT_RC='false'
 
+export PATH=$PATH:$HOME/bin
+
 [ -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src ] && fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 echo $ZSH_CUSTOM
 
