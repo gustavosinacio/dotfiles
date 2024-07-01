@@ -24,7 +24,7 @@ vim.keymap.set(
   { desc = "Open diagnostic [Q]uickfix list" }
 )
 
-vim.keymap.set("n", "<leader>gg", ":Git<CR>", { desc = "[G]o [G]it" })
+vim.keymap.set("n", "<leader>gg", ":Git<CR>")
 
 vim.keymap.set("n", "<leader>ll", ":Lazy<CR>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")

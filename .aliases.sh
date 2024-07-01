@@ -42,6 +42,7 @@ alias rr="ranger"
 
 alias echo="echo -e"
 
-alias gw='cd ~/workhub'
+alias cdw='cd ~/workhub'
+alias cdob='cd "/Users/gustavoinacio/Library/Mobile Documents/com~apple~CloudDocs/obsidian"'
 
 alias cls='clear'

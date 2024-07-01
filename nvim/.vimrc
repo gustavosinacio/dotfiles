@@ -19,3 +19,23 @@ set cursorline
 set termguicolors
 "-- Always show the sign column
 set signcolumn=yes
+
+"-- Make line numbers default
+set number
+set relativenumber
+set showtabline=2
+set sessionoptions="curdir,folds,globals,help,tabpages,terminal,winsize"
+
+"-- Enable mouse mode, can be useful for resizing splits for example!
+"set mouse=a
+
+"-- Don't show the mode, since it's already in the status line
+set noshowmode
+
+
+
+" -- These are usefull for comparing files
+"set cursorbind
+"set scrollbind
+
+
