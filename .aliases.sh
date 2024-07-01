@@ -13,6 +13,8 @@ alias gs="git status"
 alias gcm="git commit -m"
 alias gcom="git checkout main"
 
+alias lg="lazygit"
+
 # Architectures ----------------------------------------------------------------
 alias intel="/usr/bin/arch -x86_64 /bin/zsh"
 alias arm="/usr/bin/arch -arm64 /bin/zsh"
