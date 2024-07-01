@@ -8,11 +8,6 @@ alias la='lsd -la'
 alias weather='curl -4 wttr.in/brasilia'
 
 # Github -----------------------------------------------------------------------
-alias ghcpr="GH_FORCE_TTY=100% gh pr list | fzf --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --ansi --header-lines 3 | awk '{print $1}' | xargs gh pr checkout"
-alias gs="git status"
-alias gcm="git commit -m"
-alias gcom="git checkout main"
-
 alias lg="lazygit"
 
 # Architectures ----------------------------------------------------------------

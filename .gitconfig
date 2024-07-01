@@ -8,8 +8,8 @@
   ci = commit
   co = checkout
   cm = checkout master
-  ps = push
-  pl = pull
+  P = push
+  p = pull
   cb = checkout -b
   sr = reset --soft HEAD~1
   s = status
