@@ -42,4 +42,6 @@ vim.keymap.set("n", "<M-=>", "<C-w>+")
 vim.keymap.set("n", "<M-->", "<C-w>-")
 vim.keymap.set("n", "<M-,>", "<C-w>2<")
 vim.keymap.set("n", "<M-.>", "<C-w>2>")
-vim.keymap.set("n", "<leader>x", ":source %<CR>")
+
+vim.keymap.set("n", "<C-n>", ":cnext<CR>")
+vim.keymap.set("n", "<C-p>", ":cprev<CR>")
