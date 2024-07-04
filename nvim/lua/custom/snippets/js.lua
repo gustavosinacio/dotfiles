@@ -18,10 +18,10 @@ ls.add_snippets("all", {
   -- trigger is `fn`, second argument to snippet-constructor are the nodes to insert into the buffer on expansion.
   s("clg", {
     t("console.log(9821"),
-    i(1), -- First placeholder
-    t(", {value})"),
-    i(2), -- Second placeholder
-    t(""),
+    i(2), -- First placeholder
+    t(", "),
+    i(1), -- Second placeholder
+    t(")"),
     i(0), -- Final cursor position
   }),
 }, {
