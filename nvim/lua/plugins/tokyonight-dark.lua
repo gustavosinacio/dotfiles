@@ -22,9 +22,9 @@ return {
         vim.api.nvim_set_hl(0, "NeoTreeGitRenamed", { fg = "#FFD700" })
         vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = "#96d22E" })
         vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#75715E" })
-        vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#6A9FB5" })
-        vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = "#cacacf" })
-        vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#cacacf" })
+        vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#FFD700" })
+        vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = "#fafaff" })
+        vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#fafaff" })
       end,
     })
     vim.cmd([[colorscheme tokyodark]])

@@ -169,7 +169,7 @@ alt - d : yabai -m window --toggle zoom-parent
 alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
-alt - e : yabai -m window --toggle split
+# alt - e : yabai -m window --toggle split
 
 alt - r : yabai -m space --rotate 90
 shift + alt - r : yabai -m space --rotate 270

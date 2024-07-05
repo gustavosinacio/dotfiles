@@ -56,3 +56,8 @@
 
 [maintenance]
 	repo = /Users/gustavoinacio/dotfiles
+
+
+[includeIf "gitdir:~/workhub/"]
+    path = .gitconfig-work
+
