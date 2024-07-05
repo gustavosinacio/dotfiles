@@ -13,6 +13,20 @@ return {
   },
   config = function(_, opts)
     require("tokyodark").setup(opts) -- calling setup is optional
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      pattern = "*",
+      callback = function()
+        vim.api.nvim_set_hl(0, "NeoTreeGitAdded", { fg = "#96ff2E" })
+        vim.api.nvim_set_hl(0, "NeoTreeGitDeleted", { fg = "#F92672" })
+        vim.api.nvim_set_hl(0, "NeoTreeGitModified", { fg = "#66D9EF" })
+        vim.api.nvim_set_hl(0, "NeoTreeGitRenamed", { fg = "#FFD700" })
+        vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = "#96d22E" })
+        vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = "#75715E" })
+        vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = "#6A9FB5" })
+        vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = "#cacacf" })
+        vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#cacacf" })
+      end,
+    })
     vim.cmd([[colorscheme tokyodark]])
   end,
 }
