@@ -11,8 +11,6 @@ ctrl + cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 cmd - m : open -na /Applications/mpv.app $(pbpaste)
 
 
-
-
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
 # FOR SIMPLE EXAMPLE MAPPINGS LOOK FURTHER DOWN THIS FILE..        #
@@ -91,12 +89,6 @@ cmd - m : open -na /Applications/mpv.app $(pbpaste)
 # A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
 # ############################################################### #
 
-# focus window
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
-
 # swap managed window
 # shift + alt - h : yabai -m window --swap north
 
@@ -138,6 +130,30 @@ alt - l : yabai -m window --focus east
 # shift + ctrl - a : yabai -m window --move rel:-20:0
 # shift + ctrl - s : yabai -m window --move rel:0:20
 
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# Move windows to spaces
+shift + alt - 1 : yabai -m window --space 1
+shift + alt - 2 : yabai -m window --space 2
+shift + alt - 3 : yabai -m window --space 3
+shift + alt - 4 : yabai -m window --space 4
+shift + alt - 5 : yabai -m window --space 5
+shift + alt - 6 : yabai -m window --space 6
+shift + alt - 7 : yabai -m window --space 7
+shift + alt - 8 : yabai -m window --space 8
+shift + alt - 9 : yabai -m window --space 9
+  
+# swap window
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - l : yabai -m window --warp east
+
+
 # decrease window size
 # shift + cmd - w : yabai -m window --resize top:0:20
 shift + alt - w : yabai -m window --resize top:0:-20
@@ -157,7 +173,7 @@ alt - e : yabai -m window --toggle split
 
 alt - r : yabai -m space --rotate 90
 shift + alt - r : yabai -m space --rotate 270
-shift + alt - b : yabai -m space --balance
+ctrl + alt - b : yabai -m space --balance
 
 # float / unfloat window and center on screen
 alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
