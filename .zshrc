@@ -11,6 +11,7 @@ echo $ZSH_CUSTOM
 plugins=(
   zsh-autosuggestions
   zsh-completions
+  zsh-vi-mode
 )
 plugins+=(F-Sy-H)
 
@@ -23,8 +24,5 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(oh-my-posh init zsh --config $HOME/dotfiles/oh-my-posh.toml)"
 
-# if command -v tmux &> /dev/null; then
-  # tmux &> /dev/null
-# fi
-
+source <(fzf --zsh)
 
