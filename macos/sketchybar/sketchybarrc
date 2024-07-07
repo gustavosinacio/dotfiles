@@ -22,10 +22,10 @@ sketchybar --bar position=top height=30 blur_radius=30 color=0x70000000
 default=(
   padding_left=5
   padding_right=5
-  icon.font="Hack Nerd Font:Bold:17.0"
+  icon.font="Hack Nerd Font:Bold:20.0"
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
+  icon.color=0xff03C03C
+  label.color=0xfff0f0f0
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
@@ -48,7 +48,7 @@ do
     icon.padding_left=7
     icon.padding_right=7
     background.color=0x40ffffff
-    background.corner_radius=5
+    background.corner_radius=4
     background.height=25
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
@@ -78,6 +78,11 @@ sketchybar --add item chevron left \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
+
+BACKGROUND_COLOR=0x20ffffff
+FOREGROUND_COLOR=0xff03C03C
+HIGHLIGHT_COLOR=0xffbd93f9
+
 sketchybar --add item clock right \
            --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
            --add item volume right \
@@ -87,7 +92,13 @@ sketchybar --add item clock right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change \
            --add item git_status left \
-           --set git_status update_freq=5 script="$PLUGIN_DIR/gits.sh"
+           --set git_status update_freq=5 script="$PLUGIN_DIR/gits.sh" \
+             label.color=$FOREGROUND_COLOR \
+             icon.color=$HIGHLIGHT_COLOR \
+             background.color=$BACKGROUND_COLOR \
+             background.padding_left=8 \
+             background.padding_right=8 \
+             background.corner_radius=4
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
