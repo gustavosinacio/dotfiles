@@ -12,19 +12,19 @@ padding = { x = 0, y = 0 }
 size = 13
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "Hack Nerd Font"
 style = "Heavy"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "Hack Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "Hack Nerd Font"
 style = "Medium Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "Hack Nerd Font"
 style = "Regular"
 
 # # Colors (Blood Moon)
