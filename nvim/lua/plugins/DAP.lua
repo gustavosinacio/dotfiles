@@ -65,7 +65,7 @@ return {
       dap.step_out()
     end, { desc = "Debug step ou[T]" })
 
-    vim.keymap.set("n", "<leader>b", function()
+    vim.keymap.set("n", "<leader>tb", function()
       dap.toggle_breakpoint()
     end, { desc = "Debug toggle [B]reakpoint" })
 

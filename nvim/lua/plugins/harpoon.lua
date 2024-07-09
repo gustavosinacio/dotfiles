@@ -14,15 +14,15 @@ return {
       end
 
       require("telescope.pickers")
-          .new({}, {
-            prompt_title = "Harpoon",
-            finder = require("telescope.finders").new_table({
-              results = file_paths,
-            }),
-            previewer = conf.file_previewer({}),
-            sorter = conf.generic_sorter({}),
-          })
-          :find()
+        .new({}, {
+          prompt_title = "Harpoon",
+          finder = require("telescope.finders").new_table({
+            results = file_paths,
+          }),
+          previewer = conf.file_previewer({}),
+          sorter = conf.generic_sorter({}),
+        })
+        :find()
     end
 
     harpoon:extend({
@@ -41,9 +41,9 @@ return {
       end,
     })
 
-    vim.keymap.set("n", "<C-e>", function()
-      toggle_telescope(harpoon:list())
-    end, { desc = "Open harpoon window" })
+    -- vim.keymap.set("n", "<C-e>", function()
+    --   toggle_telescope(harpoon:list())
+    -- end, { desc = "Open harpoon window" })
 
     -- Harpoon add
     vim.keymap.set("n", "<leader>a", function()
@@ -87,14 +87,6 @@ return {
     end)
     vim.keymap.set("n", "<leader>0", function()
       harpoon:list():select(10)
-    end)
-
-    -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set("n", "<leader>n", function()
-      harpoon:list():prev()
-    end)
-    vim.keymap.set("n", "<leader>p", function()
-      harpoon:list():next()
     end)
   end,
 }
