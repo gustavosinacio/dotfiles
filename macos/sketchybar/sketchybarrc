@@ -30,8 +30,8 @@ sketchybar --bar "${bar[@]}"
 default=(
 	padding_left=0
 	padding_right=0
-	icon.font="SauceCodePro Nerd Font:Bold:14.0"
-	label.font="SauceCodePro Nerd Font:Bold:14.0"
+	icon.font="SauceCodePro Nerd Font:Bold:16.0"
+	label.font="SauceCodePro Nerd Font:Regular:16.0"
 	icon.color=0xff03C03C
 	label.color=0xffffffff
 	icon.padding_left=4
