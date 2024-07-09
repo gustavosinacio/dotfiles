@@ -7,9 +7,5 @@ return {
         theme = "tokyodark",
       },
     })
-
-    vim.keymap.set("n", "<leader>hl", function()
-      vim.print(require("lualine").get_config())
-    end)
   end,
 }

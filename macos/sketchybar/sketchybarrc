@@ -13,10 +13,10 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 bar=(
-  position=top
-  height=30
-  blur_radius=30
-  color=0x70000000
+	position=top
+	height=30
+	blur_radius=30
+	color=0x70000000
 )
 
 sketchybar --bar "${bar[@]}"
@@ -27,16 +27,16 @@ sketchybar --bar "${bar[@]}"
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-  padding_left=0
-  padding_right=0
-  icon.font="Hack Nerd Font:Bold:14.0"
-  label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xff03C03C
-  label.color=0xfff0f0f0
-  icon.padding_left=4
-  icon.padding_right=4
-  label.padding_left=4
-  label.padding_right=4
+	padding_left=0
+	padding_right=0
+	icon.font="SauceCodePro Nerd Font:Bold:14.0"
+	label.font="SauceCodePro Nerd Font:Bold:14.0"
+	icon.color=0xff03C03C
+	label.color=0xfff0f0f0
+	icon.padding_left=4
+	icon.padding_right=4
+	label.padding_left=4
+	label.padding_right=4
 )
 sketchybar --default "${default[@]}"
 
@@ -50,22 +50,22 @@ SPACE_LABELS=("cnslt" "kde" "tskNts" "cms")
 
 for i in "${!SPACE_ICONS[@]}"; do
 
-  sid="$(($i + 1))"
-  space=(
-    space="$sid"
-    icon="${SPACE_ICONS[i]}"
-    icon.padding_left=8
-    icon.padding_right=4
-    background.color=0x40ffffff
-    background.corner_radius=4
-    background.height=23
-    label="${SPACE_LABELS[i]}"
-    label.padding_left=0
-    label.padding_right=8
-    script="$PLUGIN_DIR/space.sh"
-    # click_script="yabai -m space --focus $sid"
-  )
-  sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+	sid="$(($i + 1))"
+	space=(
+		space="$sid"
+		icon="${SPACE_ICONS[i]}"
+		icon.padding_left=8
+		icon.padding_right=4
+		background.color=0x40ffffff
+		background.corner_radius=4
+		background.height=23
+		label="${SPACE_LABELS[i]}"
+		label.padding_left=0
+		label.padding_right=8
+		script="$PLUGIN_DIR/space.sh"
+		# click_script="yabai -m space --focus $sid"
+	)
+	sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
 done
 
 ##### Adding Left Items #####
@@ -73,12 +73,12 @@ done
 # only the properties deviating from the current defaults need to be set
 
 sketchybar --add item chevron left \
-  --set chevron icon= label.drawing=off \
-  --add item front_app left \
-  --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-  --subscribe front_app front_app_switched \
-  --add item git_status left \
-  --set git_status update_freq=5 script="$PLUGIN_DIR/gits.sh"
+	--set chevron icon= label.drawing=off \
+	--add item front_app left \
+	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+	--subscribe front_app front_app_switched \
+	--add item git_status left \
+	--set git_status update_freq=5 script="$PLUGIN_DIR/gits.sh"
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -92,13 +92,13 @@ sketchybar --add item chevron left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-  --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
-  --add item volume right \
-  --set volume script="$PLUGIN_DIR/volume.sh" \
-  --subscribe volume volume_change \
-  --add item battery right \
-  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-  --subscribe battery system_woke power_source_change
+	--set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
+	--add item volume right \
+	--set volume script="$PLUGIN_DIR/volume.sh" \
+	--subscribe volume volume_change \
+	--add item battery right \
+	--set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+	--subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

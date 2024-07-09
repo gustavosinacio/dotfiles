@@ -35,6 +35,8 @@ local diagnostics = {
   "yamllint",
 }
 
+local disableFormattingLSPs = { "tsserver", "bashls" }
+
 -- Ensure the servers and tools above are installed
 --  To check the current status of installed tools and/or manually install
 --  other tools, you can run
@@ -46,16 +48,18 @@ vim.list_extend(ensure_installed, formattersAndLinters)
 vim.list_extend(ensure_installed, codeActions)
 vim.list_extend(ensure_installed, diagnostics)
 
-vim.print(ensure_installed)
-
 require("mason-tool-installer").setup({
   ensure_installed = ensure_installed,
 })
 
+vim.keymap.set("n", "<leader>tg", function()
+  vim.print(ensure_installed)
+end)
 
 return {
   LSPs = LSPs,
   formattersAndLinters = formattersAndLinters,
   codeActions = codeActions,
   diagnostics = diagnostics,
+  disableFormattingLSPs = disableFormattingLSPs,
 }

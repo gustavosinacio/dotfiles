@@ -16,6 +16,7 @@ return {
       local formattersAndLinters = LSPsAndFormatters.formattersAndLinters
       local codeActions = LSPsAndFormatters.codeActions
       local diagnostics = LSPsAndFormatters.diagnostics
+      local disabledLSPsFromFormatting = LSPsAndFormatters.disableFormattingLSPs
 
       local sources = {}
 
@@ -40,8 +41,6 @@ return {
         return true
       end
 
-      local filterServerNames = { "tsserver" }
-
       null_ls.setup({
         on_attach = function(client, bufnr)
           if client.supports_method("textDocument/formatting") then
@@ -51,7 +50,7 @@ return {
                 -- Exclude listed formatters from LSP servers
                 -- This is done to avoid multiple formatting
                 filter = function(client)
-                  return filterServers(client, filterServerNames)
+                  return filterServers(client, disabledLSPsFromFormatting)
                 end,
               })
             end, {
@@ -69,7 +68,7 @@ return {
                   -- Exclude listed formatters from LSP servers
                   -- This is done to avoid multiple formatting
                   filter = function(client)
-                    return filterServers(client, filterServerNames)
+                    return filterServers(client, disabledLSPsFromFormatting)
                   end,
                 })
               end,
