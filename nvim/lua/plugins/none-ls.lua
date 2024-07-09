@@ -12,30 +12,10 @@ return {
       local null_ls = require("null-ls")
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-      local formattersAndLinters = {
-        "stylua",
-        "prettier",
-        "gofumpt",
-        "goimports",
-        "golines",
-        "black",
-        -- "yamlfix",
-        -- "yamlfmt",
-      }
-
-      local codeActions = {
-        "gomodifytags",
-        "impl",
-      }
-
-      local diagnostics = {
-        "eslint_d",
-        "yamllint",
-      }
-
-      require("mason-tool-installer").setup({
-        ensure_installed = formattersAndLinters,
-      })
+      local LSPsAndFormatters = require("custom.mason_packages")
+      local formattersAndLinters = LSPsAndFormatters.formattersAndLinters
+      local codeActions = LSPsAndFormatters.codeActions
+      local diagnostics = LSPsAndFormatters.diagnostics
 
       local sources = {}
 
@@ -51,7 +31,7 @@ return {
         table.insert(sources, require("none-ls.diagnostics." .. name))
       end
 
-      function filterServers(client, excluded_names)
+      local function filterServers(client, excluded_names)
         for _, name in ipairs(excluded_names) do
           if client.name == name then
             return false

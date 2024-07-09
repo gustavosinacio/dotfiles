@@ -171,31 +171,29 @@ return { -- LSP Configuration & Plugins
       require("cmp_nvim_lsp").default_capabilities()
     )
 
-    local servers = {
-      pyright = {},
-      bashls = {},
-      taplo = {},
-      yamlls = {},
-    }
+    local masonPackages = require("custom.mason_packages")
+    local servers = masonPackages.LSPs
 
-    local go = require("custom.LSPs.go")
-    local lua = require("custom.LSPs.lua")
-    local js = require("custom.LSPs.js")
-
-    servers = vim.tbl_deep_extend("force", servers, go)
-    servers = vim.tbl_deep_extend("force", servers, lua)
-    servers = vim.tbl_deep_extend("force", servers, js)
-
-    -- Ensure the servers and tools above are installed
-    --  To check the current status of installed tools and/or manually install
-    --  other tools, you can run
-    --    :Mason
-    -- You can add other tools here that you want Mason to install
-    -- for you, so that they are available from within Neovim.
-    local ensure_installed = vim.tbl_keys(servers or {})
-    require("mason-tool-installer").setup({
-      ensure_installed = ensure_installed,
-    })
+    -- local servers = {
+    --   pyright = {},
+    --   bashls = {},
+    --   taplo = {},
+    --   yamlls = {},
+    -- }
+    --
+    -- local go = require("custom.LSPs.go")
+    -- local lua = require("custom.LSPs.lua")
+    -- local js = require("custom.LSPs.js")
+    -- local bash = require("custom.LSPs.bash")
+    --
+    -- servers = vim.tbl_deep_extend("force", servers, go)
+    -- servers = vim.tbl_deep_extend("force", servers, lua)
+    -- servers = vim.tbl_deep_extend("force", servers, js)
+    --
+    -- local ensure_installed = vim.tbl_keys(servers or {})
+    -- require("mason-tool-installer").setup({
+    --   ensure_installed = ensure_installed,
+    -- })
 
     require("mason-lspconfig").setup({
       handlers = {

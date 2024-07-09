@@ -1,11 +1,13 @@
+vim.cmd([[
+  autocmd BufRead,BufNewFile sketchybarrc setfiletype sh
+]])
+
 return {
-  tsserver = {
+  bashls = {
     settings = {
       format = {
         enable = false,
       },
     },
   },
-  eslint_d = {},
-  prettier = {},
 }
