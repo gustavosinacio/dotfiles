@@ -17,6 +17,7 @@ bar=(
 	height=30
 	blur_radius=30
 	color=0x70000000
+	font_smoothing=on
 )
 
 sketchybar --bar "${bar[@]}"
@@ -32,11 +33,13 @@ default=(
 	icon.font="SauceCodePro Nerd Font:Bold:14.0"
 	label.font="SauceCodePro Nerd Font:Bold:14.0"
 	icon.color=0xff03C03C
-	label.color=0xfff0f0f0
+	label.color=0xffffffff
 	icon.padding_left=4
 	icon.padding_right=4
 	label.padding_left=4
 	label.padding_right=4
+	background.corner_radius=4
+	background.height=24
 )
 sketchybar --default "${default[@]}"
 
@@ -44,6 +47,20 @@ sketchybar --default "${default[@]}"
 # Let's add some mission control spaces:
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 # to indicate active and available mission control spaces.
+
+LEFT_BAR_APP_SPACING=10
+
+front_app_configs=(
+	background.padding_right="$LEFT_BAR_APP_SPACING"
+)
+
+sketchybar --add item front_app left \
+	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+	"${front_app_configs[@]}" \
+	--subscribe front_app front_app_switched \
+	--add item chevron left \
+	--set chevron icon= label.drawing=off \
+	background.padding_right=$LEFT_BAR_APP_SPACING
 
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
 SPACE_LABELS=("cnslt" "kde" "tskNts" "cms")
@@ -55,29 +72,30 @@ for i in "${!SPACE_ICONS[@]}"; do
 		space="$sid"
 		icon="${SPACE_ICONS[i]}"
 		icon.padding_left=8
-		icon.padding_right=4
-		background.color=0x40ffffff
-		background.corner_radius=4
-		background.height=23
+		icon.padding_right=8
+		background.color=0x10ffffff
+		background.border_color=0xff03C03C
+		background.border_width=1
+		background.height=24
 		label="${SPACE_LABELS[i]}"
 		label.padding_left=0
 		label.padding_right=8
 		script="$PLUGIN_DIR/space.sh"
-		# click_script="yabai -m space --focus $sid"
 	)
-	sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+
+	[[ -z ${SPACE_LABELS[i]} ]] && space+=(label.drawing=off)
+
+	sketchybar --add space space."$sid" left \
+		background.color=0x10ffffff \
+		--set space."$sid" "${space[@]}"
+
 done
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
 # only the properties deviating from the current defaults need to be set
 
-sketchybar --add item chevron left \
-	--set chevron icon= label.drawing=off \
-	--add item front_app left \
-	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-	--subscribe front_app front_app_switched \
-	--add item git_status left \
+sketchybar --add item git_status left \
 	--set git_status update_freq=5 script="$PLUGIN_DIR/gits.sh"
 
 ##### Adding Right Items #####
