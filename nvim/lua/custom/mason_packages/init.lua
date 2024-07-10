@@ -1,12 +1,13 @@
+local go = require("custom.LSPs.go")
+local lua = require("custom.LSPs.lua")
+local js = require("custom.LSPs.js")
+
+local bash = require("custom.LSPs.bash")
 local LSPs = {
   pyright = {},
   taplo = {},
   yamlls = {},
 }
-local go = require("custom.LSPs.go")
-local lua = require("custom.LSPs.lua")
-local js = require("custom.LSPs.js")
-local bash = require("custom.LSPs.bash")
 
 LSPs = vim.tbl_deep_extend("force", LSPs, go)
 LSPs = vim.tbl_deep_extend("force", LSPs, lua)
@@ -35,14 +36,11 @@ local diagnostics = {
   "yamllint",
 }
 
-local disableFormattingLSPs = { "tsserver", "bashls" }
+local disableFormattingLSPs = {
+  "tsserver",
+  "bashls",
+}
 
--- Ensure the servers and tools above are installed
---  To check the current status of installed tools and/or manually install
---  other tools, you can run
---    :Mason
--- You can add other tools here that you want Mason to install
--- for you, so that they are available from within Neovim.
 local ensure_installed = vim.tbl_keys(LSPs or {})
 vim.list_extend(ensure_installed, formattersAndLinters)
 vim.list_extend(ensure_installed, codeActions)

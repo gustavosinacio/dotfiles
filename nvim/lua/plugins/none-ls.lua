@@ -82,7 +82,7 @@ return {
                 -- Exclude listed formatters from LSP servers
                 -- This is done to avoid multiple formatting
                 filter = function(client)
-                  return filterServers(client, filterServerNames)
+                  return filterServers(client, disabledLSPsFromFormatting)
                 end,
               })
             end, {

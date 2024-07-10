@@ -3,11 +3,5 @@ vim.cmd([[
 ]])
 
 return {
-  bashls = {
-    settings = {
-      format = {
-        enable = false,
-      },
-    },
-  },
+  bashls = {},
 }

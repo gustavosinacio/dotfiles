@@ -1,6 +1,5 @@
 -- My config for nvim
 -- General Settings
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -44,7 +43,13 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = true
 -- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.opt.listchars = { tab = "· ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = {
+  tab = "· ",
+  trail = "·",
+  nbsp = "␣",
+}
+
+vim.opt.colorcolumn = "81"
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -54,26 +59,24 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 5
-
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
--- Set highlight on search
+vim.o.fixendofline = true
+vim.o.fixeol = true
 
 -- NOTE: yank highlight
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup(
-    "custom-highlight-yank",
-    { clear = true }
-  ),
+  group = vim.api.nvim_create_augroup("custom-highlight-yank", {
+    clear = true,
+  }),
   callback = function()
     vim.highlight.on_yank()
   end,
 })
 
 vim.api.nvim_create_autocmd("RecordingLeave", {
-  group = vim.api.nvim_create_augroup("custom-recording", { clear = true }),
+  group = vim.api.nvim_create_augroup("custom-recording", {
+    clear = true,
+  }),
   desc = "show recording status",
   callback = function()
     print("Finished recording '" .. vim.fn.reg_recording() .. "'")

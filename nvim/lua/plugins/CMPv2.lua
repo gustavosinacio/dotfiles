@@ -1,5 +1,4 @@
 return {
-
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -42,8 +41,9 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = "menu,menuone,noinsert" },
-
+        completion = {
+          completeopt = "menu,menuone,noinsert",
+        },
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
@@ -60,7 +60,9 @@ return {
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
-          ["<C-s>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-s>"] = cmp.mapping.confirm({
+            select = true,
+          }),
 
           ["<C-l>"] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
