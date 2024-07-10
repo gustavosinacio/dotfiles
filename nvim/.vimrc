@@ -30,12 +30,18 @@ set sessionoptions="curdir,folds,globals,help,tabpages,terminal,winsize"
 "set mouse=a
 
 "-- Don't show the mode, since it's already in the status line
-set noshowmode
-
-
+"set noshowmode
 
 " -- These are usefull for comparing files
 "set cursorbind
 "set scrollbind
 
 set conceallevel=0
+
+set path+=**
+
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+
