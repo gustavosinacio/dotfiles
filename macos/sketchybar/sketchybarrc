@@ -15,8 +15,8 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 bar=(
 	position=top
 	height=30
-	blur_radius=30
-	color=0x70000000
+	# blur_radius=30
+	color=0xa0000000
 	font_smoothing=on
 )
 
@@ -28,18 +28,20 @@ sketchybar --bar "${bar[@]}"
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-	padding_left=0
-	padding_right=0
 	icon.font="SauceCodePro Nerd Font:Bold:14.0"
 	label.font="SauceCodePro Nerd Font:Regular:14.0"
-	icon.color=0xff03C03C
+	background.padding_left=5
+	background.padding_right=5
+	label.padding_right=18
 	label.color=0xffffffff
-	icon.padding_left=4
+	icon.color=0xff03C03C
 	icon.padding_right=4
+	icon.padding_left=8
+	label.padding_right=8
 	label.padding_left=4
-	label.padding_right=4
 	background.corner_radius=4
-	background.height=24
+	background.height=27
+	background.color=0xee121212
 )
 sketchybar --default "${default[@]}"
 
@@ -60,9 +62,13 @@ sketchybar --add item front_app left \
 	--subscribe front_app front_app_switched \
 	--add item chevron left \
 	--set chevron icon= label.drawing=off \
-	background.padding_right=$LEFT_BAR_APP_SPACING
+	icon.padding_left=8 \
+	icon.padding_right=8 \
+	background.padding_right=$LEFT_BAR_APP_SPACING \
+	background.padding_left=0 \
+	background.color=0x00ffffff
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9")
 SPACE_LABELS=("cnst" "kde" "tskNts" "cms")
 
 for i in "${!SPACE_ICONS[@]}"; do
@@ -71,25 +77,28 @@ for i in "${!SPACE_ICONS[@]}"; do
 	space=(
 		space="$sid"
 		icon="${SPACE_ICONS[i]}"
-		icon.padding_left=8
 		icon.padding_right=8
-		background.color=0x10ffffff
+		icon.padding_left=8
+		# background.color=0xf0ffffff
 		background.border_color=0xff03C03C
 		background.border_width=1
-		background.height=24
+		background.padding_left=0
+		background.padding_right=0
 		label="${SPACE_LABELS[i]}"
 		label.padding_left=0
-		label.padding_right=8
 		script="$PLUGIN_DIR/space.sh"
 	)
 
 	[[ -z ${SPACE_LABELS[i]} ]] && space+=(label.drawing=off)
 
 	sketchybar --add space space."$sid" left \
-		background.color=0x10ffffff \
 		--set space."$sid" "${space[@]}"
 
 done
+
+sketchybar --add bracket spaces $default left \
+	--set space[1] "${space[1]}" \
+	label="test"
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
