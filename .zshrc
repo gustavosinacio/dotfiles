@@ -15,6 +15,9 @@ plugins=(
 )
 plugins+=(F-Sy-H)
 
+# Enable vi mode
+bindkey -v
+
 source $ZSH/oh-my-zsh.sh
 
 [ -f $HOME/.profile ] && source ~/.profile 

@@ -8,7 +8,9 @@ return {
     },
     config = true,
     opts = {
-      new_buffers_position = "next",
+      buffers = {
+        new_buffers_position = "next",
+      },
       -- The default highlight group values.
       -- The `fg`, `bg`, and `sp` keys are either colors in hexadecimal format or
       -- functions taking a `buffer` parameter and returning a color in

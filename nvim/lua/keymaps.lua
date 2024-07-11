@@ -6,7 +6,6 @@ if myOS == "Darwin" then
 end
 
 MainMod = "<" .. pureMainMod .. "-"
-print(myOS, MainMod)
 
 vim.keymap.set(
   "n",
