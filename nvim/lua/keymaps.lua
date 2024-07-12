@@ -38,7 +38,7 @@ vim.keymap.set("n", "<M-.>", "<C-w>2>")
 
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "[EX]plore" })
+vim.keymap.set("n", "<leader>ex", vim.cmd.Tex, { desc = "[EX]plore" })
 
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
@@ -46,8 +46,8 @@ vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
-vim.keymap.set("n", "<S-Tab>", vim.cmd.bprev)
-vim.keymap.set("n", "<Tab>", vim.cmd.bnext)
+vim.keymap.set("n", "<Tab>", vim.cmd.bnext) -- shift next buffer
+vim.keymap.set("n", "<S-Tab>", vim.cmd.bprev) -- shift prev buffer
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Move lines up in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move lines down in visual mode
@@ -56,7 +56,7 @@ vim.keymap.set("n", "J", "mzJ`z") -- Join line without moving cursor to end of l
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- half page down and center screen
 vim.keymap.set("n", "<C-u>", "<C-u>zz") -- half page up and center screen
 vim.keymap.set("n", "G", "Gzz") -- whole page down and center screen
-vim.keymap.set("n", "n", "nzz")
-vim.keymap.set("n", "N", "Nzz")
+vim.keymap.set("n", "n", "nzz") -- next and center
+vim.keymap.set("n", "N", "Nzz") -- Net and center
 
---  empty comment here
+vim.keymap.set("n", "<leader>x", ":w<CR>:so<CR>")

@@ -1,7 +1,7 @@
-require("options")
-require("keymaps")
 require("config.macro_recording")
 require("config.yank_highlight")
+require("options")
+require("keymaps")
 
 vim.cmd("source ~/.config/nvim/.vimrc")
 

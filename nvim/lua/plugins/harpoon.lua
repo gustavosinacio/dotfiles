@@ -49,9 +49,6 @@ return {
     vim.keymap.set("n", "<leader>a", function()
       harpoon:list():add()
     end, { desc = "[A]dd file to harpoon" })
-    vim.keymap.set("n", "<leader>x", function()
-      harpoon:list():remove()
-    end, { desc = "[x] file from harpoon" })
     -- Harpoon show files
     vim.keymap.set("n", "<leader>\\", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())

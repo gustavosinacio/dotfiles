@@ -24,8 +24,6 @@ set splitbelow
 
 set inccommand=split " Preview substitutions live, as you type!
 
-"set mouse=a "-- Enable mouse mode, can be useful for resizing splits for example!
-
 set noshowmode "-- Don't show the mode, since it's already in the status line
 
 set cursorline " show current line with visual hightlight
