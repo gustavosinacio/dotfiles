@@ -69,7 +69,7 @@ sketchybar --add item front_app left \
 	background.color=0x00ffffff
 
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9")
-SPACE_LABELS=("cnst" "kde" "tskNts" "cms")
+SPACE_LABELS=("cns" "kde" "TNs" "cms")
 
 for i in "${!SPACE_ICONS[@]}"; do
 
