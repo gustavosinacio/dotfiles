@@ -59,4 +59,5 @@ vim.keymap.set("n", "G", "Gzz") -- whole page down and center screen
 vim.keymap.set("n", "n", "nzz") -- next and center
 vim.keymap.set("n", "N", "Nzz") -- Net and center
 
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>x", ":w<CR>:so<CR>")
