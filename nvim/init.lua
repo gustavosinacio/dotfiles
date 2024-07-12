@@ -1,5 +1,7 @@
 require("options")
 require("keymaps")
+require("config.macro_recording")
+require("config.yank_highlight")
 
 vim.cmd("source ~/.config/nvim/.vimrc")
 
@@ -10,6 +12,3 @@ for _, ft_path in
 do
   loadfile(ft_path)()
 end
-
-require("config.yank_highlight")
-require("config.macro_recording")

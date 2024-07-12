@@ -20,15 +20,12 @@ vim.keymap.set(
   { desc = "Open diagnostic [Q]uickfix list" }
 )
 
-vim.keymap.set("n", "<leader>ll", ":Lazy<CR>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Tabs
 vim.keymap.set("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { noremap = true })
-vim.keymap.set("n", "<S-Tab>", ":tabn<CR>", { noremap = true })
--- vim.keymap.set("n", "<leader>p", ":t abp<CR>", { noremap = true })
 -- Tabs -
 vim.keymap.set("n", "<leader>tmh", ":-tabmove<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>tml", ":+tabmove<CR>", { noremap = true })
@@ -39,8 +36,6 @@ vim.keymap.set("n", "<M-->", "<C-w>-")
 vim.keymap.set("n", "<M-,>", "<C-w>2<")
 vim.keymap.set("n", "<M-.>", "<C-w>2>")
 
-vim.keymap.set("n", "<leader>n", ":bnext<CR>")
-vim.keymap.set("n", "<leader>p", ":bprev<CR>")
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "[EX]plore" })
@@ -50,3 +45,18 @@ vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+
+vim.keymap.set("n", "<S-Tab>", vim.cmd.bprev)
+vim.keymap.set("n", "<Tab>", vim.cmd.bnext)
+
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Move lines up in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move lines down in visual mode
+
+vim.keymap.set("n", "J", "mzJ`z") -- Join line without moving cursor to end of line
+vim.keymap.set("n", "<C-d>", "<C-d>zz") -- half page down and center screen
+vim.keymap.set("n", "<C-u>", "<C-u>zz") -- half page up and center screen
+vim.keymap.set("n", "G", "Gzz") -- whole page down and center screen
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
+--  empty comment here
