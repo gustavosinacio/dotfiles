@@ -3,37 +3,25 @@ set tabstop=3
 set softtabstop=2
 set shiftwidth=2
 
-"-- Highlight search results
-set hlsearch
-"-- Incremental search
-set incsearch
-"-- Ignore case in search patterns
-set ignorecase
-"-- Override ignorecase if search pattern contains uppercase letters
-set smartcase
-"-- Disable line wrap
-set nowrap
-"-- Highlight the current line
-set cursorline
-"-- Enable true color support
-set termguicolors
-"-- Always show the sign column
-set signcolumn=yes
+set hlsearch "-- Highlight search results
+set incsearch "-- Incremental search
+set ignorecase "-- Ignore case in search patterns
+set smartcase "-- Override ignorecase if search pattern contains uppercase letters
+set nowrap "-- Disable line wrap
+set cursorline "-- Highlight the current line
+set termguicolors "-- Enable true color support
+set signcolumn=yes "-- Always show the sign column
 
-"-- Make line numbers default
-set number
+set number "-- Make line numbers default
 set relativenumber
 set showtabline=2
 set sessionoptions="curdir,folds,globals,help,tabpages,terminal,winsize"
 
-"-- Enable mouse mode, can be useful for resizing splits for example!
-"set mouse=a
+"set mouse=a "-- Enable mouse mode, can be useful for resizing splits for example!
 
-"-- Don't show the mode, since it's already in the status line
-"set noshowmode
+set noshowmode "-- Don't show the mode, since it's already in the status line
 
-" -- These are usefull for comparing files
-"set cursorbind
+"set cursorbind - These are usefull for comparing files
 "set scrollbind
 
 set conceallevel=0
@@ -41,7 +29,17 @@ set conceallevel=0
 set path+=**
 
 let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_liststyle=3
+let g:netrw_browse_split = 0
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
 
+"let g:netrw_altv=1
+"let g:netrw_browse_split=0
+"let g:netrw_liststyle=1 "3 is tree style, 0 is default
+
+set signcolumn=yes:2
+set colorcolumn=81,121
+hi colorcolumn guibg='#202020'
+let g:netrw_browse_split = 0
+let g:netrw_banner = 0
+let g:netrw_winsize = 25

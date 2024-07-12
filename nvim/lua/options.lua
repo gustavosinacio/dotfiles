@@ -49,8 +49,6 @@ vim.opt.listchars = {
   nbsp = "␣",
 }
 
-vim.opt.colorcolumn = "81"
-
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
@@ -61,24 +59,3 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 5
 vim.o.fixendofline = true
 vim.o.fixeol = true
-
--- NOTE: yank highlight
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("custom-highlight-yank", {
-    clear = true,
-  }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
-vim.api.nvim_create_autocmd("RecordingLeave", {
-  group = vim.api.nvim_create_augroup("custom-recording", {
-    clear = true,
-  }),
-  desc = "show recording status",
-  callback = function()
-    print("Finished recording '" .. vim.fn.reg_recording() .. "'")
-  end,
-})
