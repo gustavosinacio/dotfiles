@@ -6,7 +6,6 @@ if myOS == "Darwin" then
 end
 
 MainMod = "<" .. pureMainMod .. "-"
-print(myOS, MainMod)
 
 vim.keymap.set(
   "n",
@@ -40,9 +39,14 @@ vim.keymap.set("n", "<M-->", "<C-w>-")
 vim.keymap.set("n", "<M-,>", "<C-w>2<")
 vim.keymap.set("n", "<M-.>", "<C-w>2>")
 
--- vim.keymap.set("n", "<C-n>", ":cnext<CR>")
--- vim.keymap.set("n", "<C-p>", ":cprev<CR>")
-
 vim.keymap.set("n", "<leader>n", ":bnext<CR>")
 vim.keymap.set("n", "<leader>p", ":bprev<CR>")
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
+
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "[EX]plore" })
+
+-- TIP: Disable arrow keys in normal mode
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
