@@ -31,27 +31,27 @@ vim.keymap.set("n", "<leader>tmh", ":-tabmove<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>tml", ":+tabmove<CR>", { noremap = true })
 
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
+vim.keymap.set("n", "<leader>x", ":bdelete<CR>")
 
-vim.keymap.set("n", "<leader>ex", vim.cmd.Tex, { desc = "[EX]plore" })
+vim.keymap.set("n", "<leader>tt", vim.cmd.Tex, { desc = "[T]oggle [T]ree" })
 
 -- TIP: Remaps unneded keys to improve motions ---------------------------------
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
-vim.keymap.set("i", "<BS>", "<Nop>")
-vim.keymap.set(
-  "i",
-  "<CR>",
-  '<cmd>echo "Use C-j to insert line"<CR>',
-  { noremap = true, silent = true }
-)
-vim.keymap.set(
-  "i",
-  "<BS>",
-  '<cmd>echo "Use C-h to delete char"<CR>',
-  { noremap = true, silent = true }
-)
+-- vim.keymap.set(
+--   "i",
+--   "<CR>",
+--   '<cmd>echo "Use C-j to insert line"<CR>',
+--   { noremap = true, silent = true }
+-- )
+-- vim.keymap.set(
+--   "i",
+--   "<BS>",
+--   '<cmd>echo "Use C-h to delete char"<CR>',
+--   { noremap = true, silent = true }
+-- )
 
 -- X Mode: ---------------------------------------------------------------------
 vim.keymap.set("i", "<C-]>", "<C-X><C-]>")
@@ -75,5 +75,4 @@ vim.keymap.set("n", "N", "Nzz") -- Net and center
 
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmwnizer<CR>")
-vim.keymap.set("n", "<leader>x", ":w<CR>:so<CR>")
 vim.keymap.set("x", "<leader>p", '"_dP') -- paste in visual mode without replacing register
