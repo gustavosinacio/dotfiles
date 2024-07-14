@@ -11,7 +11,7 @@ return { -- LSP Configuration & Plugins
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { "j-hui/fidget.nvim",    opts = {} },
+    { "j-hui/fidget.nvim", opts = {} },
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
@@ -173,27 +173,6 @@ return { -- LSP Configuration & Plugins
 
     local masonPackages = require("custom.mason_packages")
     local servers = masonPackages.LSPs
-
-    -- local servers = {
-    --   pyright = {},
-    --   bashls = {},
-    --   taplo = {},
-    --   yamlls = {},
-    -- }
-    --
-    -- local go = require("custom.LSPs.go")
-    -- local lua = require("custom.LSPs.lua")
-    -- local js = require("custom.LSPs.js")
-    -- local bash = require("custom.LSPs.bash")
-    --
-    -- servers = vim.tbl_deep_extend("force", servers, go)
-    -- servers = vim.tbl_deep_extend("force", servers, lua)
-    -- servers = vim.tbl_deep_extend("force", servers, js)
-    --
-    -- local ensure_installed = vim.tbl_keys(servers or {})
-    -- require("mason-tool-installer").setup({
-    --   ensure_installed = ensure_installed,
-    -- })
 
     require("mason-lspconfig").setup({
       handlers = {

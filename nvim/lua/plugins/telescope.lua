@@ -22,7 +22,7 @@ return {
       telescope.setup({
         defaults = {
           file_ignore_patterns = { "node_modules", ".git" }, -- Ignore certain directories
-          follow = true,                                     -- Follow symbolic links
+          follow = true, -- Follow symbolic links
           -- mappings = {
           -- 	i = {
           -- 		["<CR>"] = actions.select_tab,
@@ -62,6 +62,17 @@ return {
         builtin.live_grep,
         { desc = "[S]earch by [G]rep" }
       )
+
+      vim.keymap.set("n", "<leader>swg", function()
+        local word = vim.fn.expand("<cword>")
+        builtin.grep_string({ search = word })
+      end, { desc = "[S]earch <cword> by [G]rep" })
+
+      vim.keymap.set("n", "<leader>sWg", function()
+        local word = vim.fn.expand("<cWORD>")
+        builtin.grep_string({ search = word })
+      end, { desc = "[S]earch <cWORD> by [G]rep" })
+
       vim.keymap.set(
         "n",
         "<leader>sh",

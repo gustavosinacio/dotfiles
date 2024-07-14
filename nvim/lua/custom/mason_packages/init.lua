@@ -1,7 +1,6 @@
 local go = require("custom.LSPs.go")
 local lua = require("custom.LSPs.lua")
 local js = require("custom.LSPs.js")
-
 local bash = require("custom.LSPs.bash")
 local LSPs = {
   pyright = {},
