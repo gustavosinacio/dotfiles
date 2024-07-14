@@ -44,6 +44,5 @@ alias cdob='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents'
 
 alias cls='clear'
 
-
 # Fuzzy finder -----
 alias hf='history | fzf -e'

@@ -30,25 +30,39 @@ vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>tmh", ":-tabmove<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>tml", ":+tabmove<CR>", { noremap = true })
 
--- Window resizing-
-vim.keymap.set("n", "<M-=>", "<C-w>+")
-vim.keymap.set("n", "<M-->", "<C-w>-")
-vim.keymap.set("n", "<M-,>", "<C-w>2<")
-vim.keymap.set("n", "<M-.>", "<C-w>2>")
-
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 
 vim.keymap.set("n", "<leader>ex", vim.cmd.Tex, { desc = "[EX]plore" })
 
--- TIP: Disable arrow keys in normal mode
+-- TIP: Remaps unneded keys to improve motions ---------------------------------
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set("i", "<BS>", "<Nop>")
+vim.keymap.set(
+  "i",
+  "<CR>",
+  '<cmd>echo "Use C-j to insert line"<CR>',
+  { noremap = true, silent = true }
+)
+vim.keymap.set(
+  "i",
+  "<BS>",
+  '<cmd>echo "Use C-h to delete char"<CR>',
+  { noremap = true, silent = true }
+)
+
+-- X Mode: ---------------------------------------------------------------------
+vim.keymap.set("i", "<C-]>", "<C-X><C-]>")
+vim.keymap.set("i", "<C-F>", "<C-X><C-F>")
+vim.keymap.set("i", "<C-D>", "<C-X><C-D>")
+vim.keymap.set("i", "<C-L>", "<C-X><C-L>")
+
+--------------------------------------------------------------------------------
 
 vim.keymap.set("n", "<Tab>", vim.cmd.bnext) -- shift next buffer
 vim.keymap.set("n", "<S-Tab>", vim.cmd.bprev) -- shift prev buffer
-
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Move lines up in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move lines down in visual mode
 
@@ -62,3 +76,4 @@ vim.keymap.set("n", "N", "Nzz") -- Net and center
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmwnizer<CR>")
 vim.keymap.set("n", "<leader>x", ":w<CR>:so<CR>")
+vim.keymap.set("x", "<leader>p", '"_dP') -- paste in visual mode without replacing register

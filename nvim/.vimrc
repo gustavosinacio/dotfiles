@@ -56,3 +56,4 @@ set mouse=a "-- Enable mouse mode, can be useful for resizing splits for example
 
 set updatetime=450 "-- Decrease update time
 
+

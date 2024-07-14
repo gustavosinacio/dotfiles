@@ -52,7 +52,7 @@ return {
         mapping = cmp.mapping.preset.insert({
           ["<C-Space>"] = cmp.mapping.complete({}),
 
-          -- ["<C-n>"] = cmp.mapping.complete({}),
+          -- ["<CR>"] = cmp.mapping.confirm({}),
           -- ["<C-n>"] = cmp.mapping.select_next_item(),
           -- ["<C-p>"] = cmp.mapping.select_prev_item(),
 
@@ -60,32 +60,36 @@ return {
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
-          ["<C-l>"] = cmp.mapping(function()
+          ["<Tab>"] = cmp.mapping(function(fallback)
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
+            else
+              fallback()
             end
           end, { "i", "s" }),
 
-          ["<C-h>"] = cmp.mapping(function()
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
+            else
+              fallback()
             end
           end, { "i", "s" }),
 
-          ["<Tab>"] = function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            else
-              fallback()
-            end
-          end,
-          ["<S-Tab>"] = function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            else
-              fallback()
-            end
-          end,
+          -- ["<Tab>"] = function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_next_item()
+          --   else
+          --     fallback()
+          --   end
+          -- end,
+          -- ["<S-Tab>"] = function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_prev_item()
+          --   else
+          --     fallback()
+          --   end
+          -- end,
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
