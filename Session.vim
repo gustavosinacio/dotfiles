@@ -2,8 +2,6 @@ let SessionLoad = 1
 let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 let v:this_session=expand("<sfile>:p")
 silent only
-silent tabonly
-cd ~/dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,17 +11,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +19 nvim/COMMANDS.md
+badd +21 ~/dotfiles/nvim/lua/plugins/cokeline.lua
 argglobal
 %argdel
-edit nvim/COMMANDS.md
+edit ~/dotfiles/nvim/lua/plugins/cokeline.lua
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
 wincmd t
@@ -33,49 +27,13 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
 argglobal
-balt nvim/lua/keymaps.lua
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 27) / 54)
+let s:l = 21 - ((14 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
-normal! 063|
-wincmd w
-argglobal
-enew | setl bt=help
-help help.txt@en
-balt nvim/COMMANDS.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 27) / 54)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-wincmd =
-tabnext 1
+keepjumps 21
+normal! 029|
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

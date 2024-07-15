@@ -29,6 +29,18 @@ vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { noremap = true })
 -- Tabs -
 vim.keymap.set("n", "<leader>tmh", ":-tabmove<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>tml", ":+tabmove<CR>", { noremap = true })
+vim.keymap.set(
+  "n",
+  "<leader>n",
+  vim.cmd.cnext,
+  { noremap = true, desc = "next on list" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>p",
+  vim.cmd.cprev,
+  { noremap = true, desc = "prev on list" }
+)
 
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 vim.keymap.set("n", "<leader>x", ":bdelete<CR>")

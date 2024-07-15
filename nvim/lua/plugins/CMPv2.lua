@@ -55,6 +55,8 @@ return {
         mapping = cmp.mapping.preset.insert({
           ["<C-Space>"] = cmp.mapping.complete({}),
 
+          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+
           -- Scroll the documentation window [b]ack / [f]orward
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
