@@ -88,6 +88,7 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-gits,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -325,4 +326,8 @@ label:focus {
 
 #privacy-item.audio-out {
   background-color: #0069d4;
+}
+
+#custom-gits {
+  color: #1ca000;
 }
