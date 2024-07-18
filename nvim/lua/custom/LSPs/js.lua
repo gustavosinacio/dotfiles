@@ -1,10 +1,4 @@
 return {
-  tsserver = {
-    settings = {
-      format = {
-        enable = false,
-      },
-    },
-  },
+  tsserver = {},
   prettier = {},
 }

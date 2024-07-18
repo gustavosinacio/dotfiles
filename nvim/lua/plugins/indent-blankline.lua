@@ -13,13 +13,13 @@ return {
     hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
       vim.api.nvim_set_hl(0, "RainbowDarker", { fg = "#262626" })
       vim.api.nvim_set_hl(0, "RainbowDark", { fg = "#232323" })
-      vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#0F9D7B" })
+      vim.api.nvim_set_hl(0, "RainbowActiveDelimiter", { fg = "#0F9D7B" })
     end)
 
     vim.g.rainbow_delimiters = { highlight = highlight }
 
     require("ibl").setup({
-      scope = { highlight = "RainbowBlue", char = "" },
+      scope = { highlight = "RainbowActiveDelimiter", char = "" },
       indent = { highlight = highlight, char = "" },
     })
 

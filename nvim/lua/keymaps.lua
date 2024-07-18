@@ -88,3 +88,8 @@ vim.keymap.set("n", "N", "Nzz") -- Net and center
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmwnizer<CR>")
 vim.keymap.set("x", "<leader>p", '"_dP') -- paste in visual mode without replacing register
+
+vim.keymap.set("n", "<left>", "<C-w>2<", { noremap = true })
+vim.keymap.set("n", "<down>", "<C-w>-", { noremap = true })
+vim.keymap.set("n", "<up>", "<C-w>+", { noremap = true })
+vim.keymap.set("n", "<right>", "<C-w>2>", { noremap = true })
