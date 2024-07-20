@@ -42,7 +42,6 @@ vim.keymap.set(
   { noremap = true, desc = "prev on list" }
 )
 
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
 vim.keymap.set("n", "<leader>x", ":bdelete<CR>")
 
 vim.keymap.set("n", "<leader>tt", vim.cmd.Tex, { desc = "[T]oggle [T]ree" })
@@ -93,3 +92,9 @@ vim.keymap.set("n", "<left>", "<C-w>2<", { noremap = true })
 vim.keymap.set("n", "<down>", "<C-w>-", { noremap = true })
 vim.keymap.set("n", "<up>", "<C-w>+", { noremap = true })
 vim.keymap.set("n", "<right>", "<C-w>2>", { noremap = true })
+
+vim.keymap.set("n", "<leader>so", function()
+  print("real lua function")
+  vim.cmd("write")
+  vim.cmd("source %")
+end, { noremap = true })

@@ -21,7 +21,7 @@ return {
       --
       telescope.setup({
         defaults = {
-          file_ignore_patterns = { "node_modules", ".git" }, -- Ignore certain directories
+          file_ignore_patterns = { "/node_modules", "\\.git" }, -- Ignore certain directories
           follow = true, -- Follow symbolic links
           -- mappings = {
           -- 	i = {

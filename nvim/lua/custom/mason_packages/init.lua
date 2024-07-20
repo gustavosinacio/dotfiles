@@ -31,7 +31,7 @@ local codeActions = {
 }
 
 local diagnostics = {
-  "eslint_d",
+  "eslint",
   "yamllint",
 }
 

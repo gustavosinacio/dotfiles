@@ -28,7 +28,7 @@ return {
         ignore_whitespace = false,
         virt_text_priority = 100,
       },
-      current_line_blame_formatter = "--> [<author>, <author_time:%Y-%m-%d> - <summary>]",
+      current_line_blame_formatter = "<abbrev_sha> [<author>, <author_time:%Y-%m-%d> - <summary>]",
       sign_priority = 6,
       update_debounce = 100,
       status_formatter = nil, -- Use default
@@ -51,7 +51,7 @@ return {
         end
 
         -- Navigation
-        map("n", "]c", function()
+        map("n", "]h", function()
           if vim.wo.diff then
             vim.cmd.normal({ "]c", bang = true })
           else
@@ -59,7 +59,7 @@ return {
           end
         end)
 
-        map("n", "[c", function()
+        map("n", "[h", function()
           if vim.wo.diff then
             vim.cmd.normal({ "[c", bang = true })
           else
@@ -77,7 +77,12 @@ return {
           gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, { desc = "reset_hunk" })
         map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "stage_buffer" })
-        map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "undo_stage_hunk" })
+        map(
+          "n",
+          "<leader>hu",
+          gitsigns.undo_stage_hunk,
+          { desc = "undo_stage_hunk" }
+        )
         map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "reset_buffer" })
 
         map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "preview_hunk" })
@@ -90,10 +95,20 @@ return {
           gitsigns.diffthis("~")
         end, { desc = "diffthis" })
 
-        map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "toggle_deleted" })
+        map(
+          "n",
+          "<leader>td",
+          gitsigns.toggle_deleted,
+          { desc = "toggle_deleted" }
+        )
 
         -- Text object
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "select hunk" })
+        map(
+          { "o", "x" },
+          "ih",
+          ":<C-U>Gitsigns select_hunk<CR>",
+          { desc = "select hunk" }
+        )
       end,
     })
   end,
