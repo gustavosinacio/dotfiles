@@ -56,4 +56,6 @@ set mouse=a "-- Enable mouse mode, can be useful for resizing splits for example
 
 set updatetime=450 "-- Decrease update time
 
-
+set foldmethod=expr
+set foldlevel=20
+set foldexpr=nvim_treesitter#foldexpr()

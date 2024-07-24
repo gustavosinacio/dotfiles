@@ -93,7 +93,7 @@ vim.keymap.set("n", "<down>", "<C-w>-", { noremap = true })
 vim.keymap.set("n", "<up>", "<C-w>+", { noremap = true })
 vim.keymap.set("n", "<right>", "<C-w>2>", { noremap = true })
 
-vim.keymap.set("n", "<leader>so", function()
+vim.keymap.set("n", "<leader><leader>x", function()
   print("real lua function")
   vim.cmd("write")
   vim.cmd("source %")
