@@ -5,7 +5,8 @@
 # ]
 
 # open terminal, blazingly fast compared to iTerm/Hyper
-ctrl + cmd - return : /Applications/kitty.app/Contents/MacOS/kitty tmux
+ctrl + cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
 
 # open mpv
 cmd - m : open -na /Applications/mpv.app $(pbpaste)
