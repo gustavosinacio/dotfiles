@@ -11,9 +11,7 @@ set incsearch "-- Incremental search
 set ignorecase "-- Ignore case in search patterns
 set smartcase "-- Override ignorecase if search pattern contains uppercase letters
 set nowrap "-- Disable line wrap
-set cursorline "-- Highlight the current line
 set termguicolors "-- Enable true color support
-set signcolumn=yes "-- Always show the sign column
 
 set number "-- Make line numbers default
 set relativenumber
@@ -22,11 +20,10 @@ set sessionoptions="curdir,folds,globals,help,tabpages,terminal,winsize"
 set splitright
 set splitbelow
 
-set inccommand=split " Preview substitutions live, as you type!
 
 "set noshowmode "-- Don't show the mode, since it's already in the status line
 
-set cursorline " show current line with visual hightlight
+"set cursorline " show current line with visual hightlight
 
 set undofile
 
@@ -35,13 +32,11 @@ set undofile
 
 set conceallevel=0
 
-set path+=**
-
 let g:netrw_browse_split = 0
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
-set signcolumn=yes:2
+"set signcolumn=yes "-- Always show the sign column
 set colorcolumn=81,121
 hi colorcolumn guibg='#202020'
 
@@ -59,3 +54,43 @@ set updatetime=450 "-- Decrease update time
 set foldmethod=expr
 set foldlevel=20
 set foldexpr=nvim_treesitter#foldexpr()
+
+
+" from https://youtu.be/XA2WjJbmmoM
+
+" set vim to not try to look and behave like vi
+set nocompatible
+
+" suposably adds syntax. Could not see any change from vanilla
+syntax enable
+
+" tecnically a plugin, but ships with vim
+filetype plugin on
+
+" search down into subfolders
+" Provides tab-completion
+" When doing this, he used `:set path?` to see the variable info
+" This actually works and its fucking amazing
+" It works with * completion like *.go
+set path+=**
+
+" This is suppose to change the menu style, but it didn't work
+set wildmenu
+
+" Autocomplete works out of the box
+" It is documented inside in |ins-completion|
+"
+" ^x^n for just this file
+" ^x^f for filenames (works with the ** on path that was set previously
+" ^x^] for tags only
+" ^n for anything specified by the 'complete' option
+
+" File browsing
+"let g:netrw_banner=0
+"let g:netrw_browse_split=4
+"let g:netrw_altv=1
+"let g:netrw_liststyle=3
+"let g:netrw_list_hide=netrw_gitignore#Hide()
+
+":helpgrep with grep goes into the quicklist
+

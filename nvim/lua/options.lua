@@ -13,3 +13,6 @@ vim.opt.listchars = {
   trail = "·",
   nbsp = "␣",
 }
+
+vim.o.inccommand = "split"
+vim.o.signcolumn = "auto:1-4"
