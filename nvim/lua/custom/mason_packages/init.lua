@@ -37,6 +37,7 @@ local diagnostics = {
 
 local disableFormattingLSPs = {
   "tsserver",
+  "typescript-tools",
   "bashls",
 }
 

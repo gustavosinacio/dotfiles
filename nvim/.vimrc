@@ -20,10 +20,9 @@ set sessionoptions="curdir,folds,globals,help,tabpages,terminal,winsize"
 set splitright
 set splitbelow
 
-
 "set noshowmode "-- Don't show the mode, since it's already in the status line
 
-"set cursorline " show current line with visual hightlight
+set cursorline " show current line with visual hightlight
 
 set undofile
 
@@ -36,12 +35,11 @@ let g:netrw_browse_split = 0
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
-"set signcolumn=yes "-- Always show the sign column
 set colorcolumn=81,121
-hi colorcolumn guibg='#202020'
+"hi colorcolumn guibg='#202020'
 
 set breakindent
-set timeoutlen=200
+set timeoutlen=400
 
 set fixendofline
 set fixeol
@@ -54,9 +52,6 @@ set updatetime=450 "-- Decrease update time
 set foldmethod=expr
 set foldlevel=20
 set foldexpr=nvim_treesitter#foldexpr()
-
-
-" from https://youtu.be/XA2WjJbmmoM
 
 " set vim to not try to look and behave like vi
 set nocompatible
@@ -94,3 +89,38 @@ set wildmenu
 
 ":helpgrep with grep goes into the quicklist
 
+" -- Keymaps ---------------------------------------
+nnoremap <leader>e <cmd>Explore<CR>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <Esc> <cmd>nohlsearch<CR>
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap G Gzz
+
+nnoremap J mzJ`z
+
+nnoremap <Tab> <cmd>bnext<CR>
+nnoremap <S-Tab> <cmd>bprev<CR>
+nnoremap <leader>x <cmd>bdelete<CR>
+nnoremap <leader><leader>x <cmd>w<CR><cmd>source %<CR>
+
+nnoremap <left> <cmd>echo "Use h to move!!"<CR>
+nnoremap <right> <cmd>echo "Use l to move!!"<CR>
+nnoremap <up> <cmd>echo "Use k to move!!"<CR>
+nnoremap <down> <cmd>echo "Use j to move!!"<CR>
+
+xnoremap <leader>p "_dP
+
+vnoremap K <cmd>m '<-2<CR>gv=gv
+vnoremap J <cmd>m '>+1<CR>gv=gv
+
+nnoremap <leader>n <cmd>cnext<CR>
+nnoremap <leader>p <cmd>cprev<CR>
+
+nnoremap <C-f> <cmd>silent !tmux neww tmwnizer<CR>
+" --------------------------------------------------
+
+
+"colorscheme zaibatsu

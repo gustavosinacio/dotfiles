@@ -15,4 +15,6 @@ vim.opt.listchars = {
 }
 
 vim.o.inccommand = "split"
-vim.o.signcolumn = "auto:1-4"
+vim.o.signcolumn = "yes:2"
+
+-- require("themes.oled").setup()
