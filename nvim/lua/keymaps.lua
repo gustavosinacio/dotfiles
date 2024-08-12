@@ -20,7 +20,7 @@ vim.keymap.set(
   { desc = "Open diagnostic [Q]uickfix list" }
 )
 
-vim.keymap.set("n", "<leader>tt", vim.cmd.Tex, { desc = "[T]oggle [T]ree" })
+-- vim.keymap.set("n", "<leader>tt", vim.cmd.Tex, { desc = "[T]oggle [T]ree" })
 
 -- X Mode: ---------------------------------------------------------------------
 vim.keymap.set("i", "<C-]>", "<C-X><C-]>")
@@ -39,3 +39,11 @@ vim.keymap.set("n", "<left>", "<C-w>2<", { noremap = true })
 vim.keymap.set("n", "<down>", "<C-w>-", { noremap = true })
 vim.keymap.set("n", "<up>", "<C-w>+", { noremap = true })
 vim.keymap.set("n", "<right>", "<C-w>2>", { noremap = true })
+
+vim.keymap.set("n", "<leader>kz", "<cmd>ZenMode<CR>", { noremap = true })
+vim.keymap.set(
+  "n",
+  "<leader>kf",
+  "<cmd>echo expand('%:~:.')<CR>",
+  { noremap = true }
+)

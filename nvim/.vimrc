@@ -45,7 +45,7 @@ set fixendofline
 set fixeol
 set scrolloff=8
 
-set mouse=a "-- Enable mouse mode, can be useful for resizing splits for example!
+set mouse=  "-- Enable mouse mode, can be useful for resizing splits for example!
 
 set updatetime=450 "-- Decrease update time
 
@@ -90,7 +90,7 @@ set wildmenu
 ":helpgrep with grep goes into the quicklist
 
 " -- Keymaps ---------------------------------------
-nnoremap <leader>e <cmd>Explore<CR>
+nnoremap <leader>tt <cmd>Explore<CR>
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <Esc> <cmd>nohlsearch<CR>
