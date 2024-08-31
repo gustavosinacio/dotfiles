@@ -1,3 +1,6 @@
 [shell]
   program = "tmux"
 
+[font]
+  size = 12
+

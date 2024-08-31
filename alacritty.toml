@@ -8,9 +8,6 @@ dynamic_padding = true
 opacity = 0.97
 padding = { x = 0, y = 0 }
 
-[font]
-size = 18
-
 [font.bold]
 family = "SauceCodePro Nerd Font"
 style = "Bold"
