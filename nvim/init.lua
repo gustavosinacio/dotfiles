@@ -9,7 +9,9 @@ require("keymaps")
 local current_path = vim.fn.getcwd()
 
 -- Source the .vimrc file
-vim.cmd("source " .. current_path .. "/.vimrc")
+vim.cmd(
+  "source " .. vim.fn.fnamemodify(vim.fn.expand("$MYVIMRC"), ":h") .. "/.vimrc"
+)
 
 require("config.lazy")
 
