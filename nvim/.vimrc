@@ -124,3 +124,4 @@ nnoremap <C-f> <cmd>silent !tmux neww tmwnizer<CR>
 
 
 "colorscheme zaibatsu
+colorscheme lunaperche
