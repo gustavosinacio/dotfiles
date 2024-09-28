@@ -13,6 +13,11 @@ set smartcase "-- Override ignorecase if search pattern contains uppercase lette
 set nowrap "-- Disable line wrap
 set termguicolors "-- Enable true color support
 
+set textwidth=0
+set wrapmargin=0
+set linebreak "--optional - breaks by word rather than character
+"set wrap
+
 set number "-- Make line numbers default
 set relativenumber
 set showtabline=2
@@ -118,6 +123,8 @@ vnoremap J <cmd>m '>+1<CR>gv=gv
 
 nnoremap <leader>n <cmd>cnext<CR>
 nnoremap <leader>p <cmd>cprev<CR>
+
+nnoremap <leader>se <cmd>Ex<CR>
 
 nnoremap <C-f> <cmd>silent !tmux neww tmwnizer<CR>
 " --------------------------------------------------

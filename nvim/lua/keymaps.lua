@@ -27,13 +27,10 @@ vim.keymap.set("i", "<C-]>", "<C-X><C-]>")
 vim.keymap.set("i", "<C-F>", "<C-X><C-F>")
 vim.keymap.set("i", "<C-D>", "<C-X><C-D>")
 vim.keymap.set("i", "<C-L>", "<C-X><C-L>")
-
 --------------------------------------------------------------------------------
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Move lines up in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move lines down in visual mode
-
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<left>", "<C-w>2<", { noremap = true })
 vim.keymap.set("n", "<down>", "<C-w>-", { noremap = true })
