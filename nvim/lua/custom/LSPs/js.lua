@@ -1,5 +1,5 @@
 return {
-  tsserver = {
+  ["typescript-language-server"] = {
     filetypes = {
       "typescript",
       "typescriptreact",
