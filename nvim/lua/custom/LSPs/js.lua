@@ -1,12 +1,12 @@
 return {
-  tsserver = {
-    filetypes = {
-      "typescript",
-      "typescriptreact",
-      "javascript",
-      "javascriptreact",
-    },
-    cmd = { "typescript-language-server", "--stdio" },
-  },
+  -- tsserver = {
+  --   filetypes = {
+  --     "typescript",
+  --     "typescriptreact",
+  --     "javascript",
+  --     "javascriptreact",
+  --   },
+  --   cmd = { "typescript-language-server", "--stdio" },
+  -- },
   prettier = {},
 }
