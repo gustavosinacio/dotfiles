@@ -1,4 +1,4 @@
-return {
+local config = {
   {
     "willothy/nvim-cokeline",
     dependencies = {
@@ -51,3 +51,5 @@ return {
     end,
   },
 }
+
+return {}

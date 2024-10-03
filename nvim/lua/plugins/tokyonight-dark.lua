@@ -4,11 +4,11 @@ return {
     -- custom options here
     transparent_background = true,
     styles = {
-      comments = { italic = true },    -- style for comments
-      keywords = { italic = true },    -- style for keywords
+      comments = { italic = true }, -- style for comments
+      keywords = { italic = true }, -- style for keywords
       identifiers = { italic = true }, -- style for identifiers
-      functions = {},                  -- style for functions
-      variables = {},                  -- style for variables
+      functions = {}, -- style for functions
+      variables = {}, -- style for variables
     },
   },
   config = function(_, opts)
@@ -27,6 +27,6 @@ return {
         vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#fafaff" })
       end,
     })
-    vim.cmd([[colorscheme tokyodark]])
+    -- vim.cmd([[colorscheme tokyodark]])
   end,
 }

@@ -1,9 +1,17 @@
+vim.opt.termguicolors = true
+
 require("config.macro_recording")
 require("config.yank_highlight")
 require("options")
 require("keymaps")
 
-vim.cmd("source ~/.config/nvim/.vimrc")
+-- Get the current folder path
+local current_path = vim.fn.getcwd()
+
+-- Source the .vimrc file
+vim.cmd(
+  "source " .. vim.fn.fnamemodify(vim.fn.expand("$MYVIMRC"), ":h") .. "/.vimrc"
+)
 
 require("config.lazy")
 

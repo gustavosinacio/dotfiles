@@ -4,7 +4,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "tokyodark",
+        theme = "ayu_mirage",
       },
     })
   end,

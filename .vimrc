@@ -50,5 +50,3 @@ set complete+=kspell
 "
 ":helpgrep with grep goes into the quicklist
 
-
-colorscheme koehler
