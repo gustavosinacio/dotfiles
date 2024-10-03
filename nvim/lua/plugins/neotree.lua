@@ -98,7 +98,7 @@ return {
       commands = {},
       window = {
         position = "right",
-        width = 30,
+        width = 50,
         mapping_options = {
           noremap = true,
           nowait = true,
@@ -274,6 +274,6 @@ return {
       },
     })
 
-    vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+    vim.cmd([[nnoremap \ :Neotree focus buffers<cr>]])
   end,
 }

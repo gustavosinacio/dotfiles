@@ -20,8 +20,6 @@ vim.keymap.set(
   { desc = "Open diagnostic [Q]uickfix list" }
 )
 
--- vim.keymap.set("n", "<leader>tt", vim.cmd.Tex, { desc = "[T]oggle [T]ree" })
-
 -- X Mode: ---------------------------------------------------------------------
 vim.keymap.set("i", "<C-]>", "<C-X><C-]>")
 vim.keymap.set("i", "<C-F>", "<C-X><C-F>")

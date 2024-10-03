@@ -109,6 +109,7 @@ nnoremap J mzJ`z
 nnoremap <Tab> <cmd>bnext<CR>
 nnoremap <S-Tab> <cmd>bprev<CR>
 nnoremap <leader>x <cmd>bdelete<CR>
+nnoremap <leader>rX <cmd>bdelete!<CR>
 nnoremap <leader><leader>x <cmd>w<CR><cmd>source %<CR>
 
 nnoremap <left> <cmd>echo "Use h to move!!"<CR>
@@ -124,7 +125,7 @@ vnoremap J <cmd>m '>+1<CR>gv=gv
 nnoremap <leader>n <cmd>cnext<CR>
 nnoremap <leader>p <cmd>cprev<CR>
 
-nnoremap <leader>se <cmd>Ex<CR>
+nnoremap <leader>tt <cmd>Ex<CR>
 
 nnoremap <C-f> <cmd>silent !tmux neww tmwnizer<CR>
 " --------------------------------------------------
