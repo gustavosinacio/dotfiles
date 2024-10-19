@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-  // "layer": "top", // Waybar at top layer
+  "layer": "top", // Waybar at top layer
   "position": "bottom", // Waybar position (top|bottom|left|right)
   "height": 30, // Waybar height (to be removed for auto height)
   //"width": 1280, // Waybar width
@@ -9,7 +9,6 @@
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/mode",
-    "hyprland/scratchpad",
     "custom/media",
     "custom/gits",
   ],
@@ -36,20 +35,18 @@
     "warp-on-scroll": false,
     "format": "{name}: {icon}",
     "format-icons": {
-      "1": "  ",
-      "2": "  ",
-      "3": "  ",
-      "4": "  ",
-      "9": "  ",
-      "urgent": "  ",
-      "active": "  ",
-      "default": "  ",
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "9": " ",
+      "default": " ",
     },
   },
   "custom/gits": {
     "format": "{}",
-    "exec": "~/unixverse/scripts/git-file-report.sh ~/unixverse/ ~/dotfiles/",
-    "interval": 10,
+    "exec": "~/unixverse/scripts/git-file-report.sh ~/unixverse/ ~/dotfiles/ ~/obsidian/",
+    "interval": 30,
     "on-click": "",
   },
   "keyboard-state": {
