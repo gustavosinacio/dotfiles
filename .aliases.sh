@@ -18,8 +18,8 @@ alias arm="/usr/bin/arch -arm64 /bin/zsh"
 # alias mbrew='arch -arm64 /opt/homebrew/bin/brew'
 
 alias testnode="node -e \"console.log(process.arch)\""
-alias creat-intel-node="ln -s $(which node) /usr/local/bin/node"
-alias creat-arm-node="ln -s $(which node) /opt/homebrew/bin/node"
+# alias creat-intel-node="ln -s $(which node) /usr/local/bin/node"
+# alias creat-arm-node="ln -s $(which node) /opt/homebrew/bin/node"
 
 alias android-build="npx react-native run-android --variant=stagingDebug --no-jetifier"
 
