@@ -1,5 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 
+ZSH_THEME="fletcherm"
+
+source $ZSH/oh-my-zsh.sh
+
 export EDITOR='nvim'
 export RANGER_LOAD_DEFAULT_RC='false'
 
@@ -20,12 +24,10 @@ bindkey -v
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f $HOME/.profile ] && source ~/.profile 
+[ -f $HOME/.profile ] && source ~/.profile
 [ -f $HOME/.aliases ] && source $HOME/.aliases
+[ -f $HOME/.local_aliases ] && source $HOME/.local_aliases
 [ -f $HOME/.colors ] && source $HOME/.colors
 [ -f ./.nvmrc ] && nvm use &>/dev/null
 
-eval "$(oh-my-posh init zsh --config $HOME/dotfiles/oh-my-posh.toml)"
-
 source <(fzf --zsh)
-
