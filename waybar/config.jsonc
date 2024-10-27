@@ -9,14 +9,14 @@
       "hyprland/workspaces",
       "hyprland/mode",
       "custom/gits",
+      "backlight",
     ],
 	// "modules-center": ["hyprland/window"],
 	"modules-right": [
+      "network",
       "custom/disk_root",
       "cpu",
       "memory",
-      "custom/mail",
-      "network",
       "backlight",
       "pulseaudio",
       "battery",
@@ -63,7 +63,7 @@
 	"custom/mail": {
 		"format": "󰇰 {}",
 		"interval": 30,
-		"exec": "notmuch count tag:flagged OR tag:inbox AND NOT tag:killed"
+		//"exec": "notmuch count tag:flagged OR tag:inbox AND NOT tag:killed"
 	},
 	"network": {
 		"family": "ipv6",
@@ -77,7 +77,8 @@
 		"interval": 5
 	},
 	"backlight": {
-		"format-icons": ["🔅", "🔆"]
+      "format": "{percent}% {icon}",
+      "format-icons": ["", "", "", "", "", "", "", "", ""],
 	},
 	"pulseaudio": {
 		// "scroll-step": 1, // %, can be a float
