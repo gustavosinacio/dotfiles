@@ -2,7 +2,7 @@ return {
   "tiagovla/tokyodark.nvim",
   opts = {
     -- custom options here
-    transparent_background = true,
+    transparent_background = false,
     styles = {
       comments = { italic = true }, -- style for comments
       keywords = { italic = true }, -- style for keywords
@@ -27,6 +27,6 @@ return {
         vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#fafaff" })
       end,
     })
-    -- vim.cmd([[colorscheme tokyodark]])
+    vim.cmd([[colorscheme tokyodark]])
   end,
 }

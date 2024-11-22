@@ -274,6 +274,6 @@ return {
       },
     })
 
-    vim.cmd([[nnoremap \ :Neotree focus buffers<cr>]])
+    vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
   end,
 }

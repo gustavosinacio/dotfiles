@@ -37,7 +37,6 @@ set undofile
 set conceallevel=0
 
 let g:netrw_browse_split = 0
-let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 set colorcolumn=81,121
@@ -109,7 +108,7 @@ nnoremap J mzJ`z
 nnoremap <Tab> <cmd>bnext<CR>
 nnoremap <S-Tab> <cmd>bprev<CR>
 nnoremap <leader>x <cmd>bdelete<CR>
-nnoremap <leader>rX <cmd>bdelete!<CR>
+nnoremap <leader>X <cmd>bdelete!<CR>
 nnoremap <leader><leader>x <cmd>w<CR><cmd>source %<CR>
 
 nnoremap <left> <cmd>echo "Use h to move!!"<CR>
