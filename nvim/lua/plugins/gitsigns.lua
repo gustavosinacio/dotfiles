@@ -85,6 +85,10 @@ return {
         )
         map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "reset_buffer" })
 
+        map("n", "<leader>hn", function()
+          gitsigns.nav_hunk("next")
+        end, { desc = "next hunk" })
+
         map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "preview_hunk" })
         map("n", "<leader>hb", function()
           gitsigns.blame_line({ full = true })

@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 32, // Uncomment to set a fixed height
+  //"height": 15, // Uncomment to set a fixed height
   // Note: The layout may break if height is greater than 24
   "mode": "dock",
   "reload_style_on_change": true,
@@ -17,7 +17,7 @@
     "custom/right5",
 
     "custom/paddw",
-    "hyprland/window",
+    //"hyprland/window",
   ],
   "modules-center": [
     "custom/paddc",
