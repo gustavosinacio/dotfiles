@@ -9,6 +9,7 @@
   "height": 30,
   "modules-left": ["custom/os_button", "hyprland/workspaces"],
   "modules-center": [],
+  //"modules-center": ["hyprland/window"],
   "modules-right": [
     "temperature",
     "cpu",
@@ -29,8 +30,9 @@
   "hyprland/workspaces": {
     "icon-size": 32,
     "spacing": 20,
-    "on-scroll-up": "hyprctl dispatch workspace r+1",
-    "on-scroll-down": "hyprctl dispatch workspace r-1",
+    "disable-scroll": true,
+    //"on-scroll-up": "hyprctl dispatch workspace r+1",
+    //"on-scroll-down": "hyprctl dispatch workspace r-1",
   },
   "custom/os_button": {
     "format": "",
@@ -104,8 +106,8 @@
     },
   },
   "network": {
-    "format-wifi": " {icon}",
-    "format-ethernet": "  ",
+    "format-wifi": " {icon} {bandwidthDownBits} ⇵ {bandwidthUpBits}",
+    "format-ethernet": " {bandwidthDownBits} ⇵ {bandwidthUpBits}",
     "format-disconnected": "󰌙",
     "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
   },
@@ -131,5 +133,17 @@
       "default": [" ", " ", " "],
     },
     "on-click": "pwvucontrol",
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜",
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
 }

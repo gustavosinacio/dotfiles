@@ -63,6 +63,7 @@ tooltip label {
   padding: 3px;
   color: @content_inactive;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-bottom: 3px solid transparent;
 }
 #workspaces button.active {
   color: @content_main;
@@ -130,8 +131,8 @@ tooltip label {
 }
 
 #tray {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 0 5px;
+  padding: 0 9px;
 }
 #tray > .passive {
   border-bottom: none;
@@ -160,7 +161,8 @@ tooltip label {
 }
 
 #network {
-  padding: 0 8px 0 5px;
+  padding: 0 10px;
+  margin: 0 5px;
 }
 
 #language {
