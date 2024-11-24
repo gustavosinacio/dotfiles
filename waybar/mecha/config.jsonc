@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 24, // Uncomment to set a fixed height
+  "height": 32, // Uncomment to set a fixed height
   // Note: The layout may break if height is greater than 24
   "mode": "dock",
   "reload_style_on_change": true,
@@ -11,10 +11,10 @@
 
   "modules-left": [
     "custom/ws",
-    "custom/left1",
+    "custom/left2",
 
     "hyprland/workspaces",
-    "custom/right1",
+    "custom/right5",
 
     "custom/paddw",
     "hyprland/window",
@@ -22,13 +22,13 @@
   "modules-center": [
     "custom/paddc",
     "custom/left2",
-    "custom/cpuinfo", // temperature
+    "temperature", // temperature
 
     "custom/left3",
     "memory", // memory
 
     "custom/left4",
-    "custom/cpu", // cpu
+    "cpu", // cpu
     "custom/leftin1",
 
     "custom/left5",
@@ -50,14 +50,15 @@
 
   "modules-right": [
     "custom/media", // media info
+    "network",
 
-    "custom/left6",
+    "custom/left2",
     "pulseaudio", // output device
 
-    "custom/left7",
+    "custom/left3",
     "custom/backlight", // brightness
 
-    "custom/left8",
+    "custom/left4",
     "battery", // battery
 
     "custom/leftin2",
@@ -168,7 +169,22 @@
     "min-length": 8,
     "max-length": 8,
   },
-
+  "temperature": {
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+    "input-filename": "temp2_input",
+    "critical-threshold": 75,
+    "tooltip": false,
+    "format-critical": "󰔏{temperatureC}°C",
+    "format": "󰔏{temperatureC}°C",
+  },
+  "network": {
+    "format-wifi": "<span color='#4CAF50'> {bandwidthDownBytes}</span>\n<span color='#FF5252'> {bandwidthUpBytes}</span>",
+    "format-ethernet": "<span color='#4CAF50'> {bandwidthDownBytes}</span>\n<span color='#FF5252'> {bandwidthUpBytes}</span>",
+    "format-disconnected": "󰌙",
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 5,
+  },
   "memory": {
     "states": {
       "warning": 75,
@@ -192,7 +208,11 @@
     "min-length": 6,
     "max-length": 6,
   },
-
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%",
+    "max-length": 10,
+  },
   "idle_inhibitor": {
     "format": " ",
     "tooltip": true,

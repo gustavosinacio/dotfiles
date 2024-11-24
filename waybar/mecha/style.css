@@ -1,7 +1,7 @@
 * {
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
-  font-size: 10px;
+  font-size: 18px;
   min-height: 0;
 }
 
@@ -41,6 +41,9 @@ tooltip {
   margin: 2px 0;
   padding: 0 2px;
   transition: none;
+  margin: 6px 2px;
+  padding-left: 6px;
+  padding-right: 5px;
 }
 #workspaces button:hover {
   color: @hover-fg;
@@ -53,8 +56,6 @@ tooltip {
   background: @active-bg;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
-  margin: 2px;
-  padding: 0 6px;
 }
 
 /* === General === */
@@ -62,9 +63,9 @@ tooltip {
 #custom-ws,
 #workspaces,
 #window,
-#custom-cpuinfo,
+#temperature,
 #memory,
-#custom-cpu,
+#cpu,
 #clock,
 #custom-wifi,
 #bluetooth,
@@ -73,6 +74,7 @@ tooltip {
 #pulseaudio,
 #custom-backlight,
 #battery,
+#network,
 #custom-power {
   opacity: 1;
   color: @module-fg;
@@ -88,8 +90,25 @@ tooltip {
 #custom-left5,
 #custom-left6,
 #custom-left7,
+#custom-left8,
+#custom-right1,
+#custom-right2,
+#custom-right3,
+#custom-right4,
+#custom-right5,
+#custom-rightin1,
+#custom-leftin1,
+#custom-leftin2 {
+  font-size: 24pt;
+}
+#custom-left1,
+#custom-left2,
+#custom-left3,
+#custom-left4,
+#custom-left5,
+#custom-left6,
+#custom-left7,
 #custom-left8 {
-  font-size: 11pt;
   text-shadow: -2px 0 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -98,9 +117,13 @@ tooltip {
 #custom-right3,
 #custom-right4,
 #custom-right5 {
-  font-size: 11pt;
-  padding-right: 3px;
   text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+#custom-rightin1,
+#custom-leftin1,
+#custom-leftin2 {
+  font-size: 24pt;
 }
 
 /* === Modules === */
@@ -119,10 +142,10 @@ tooltip {
   padding-left: 2px;
 }
 #workspaces {
-  background: @workspaces;
+  background: @around1;
 }
 #custom-right1 {
-  color: @workspaces;
+  color: @around1;
   background: @main-bg;
   text-shadow: 3px 0 2px rgba(0, 0, 0, 0.4);
 }
@@ -133,26 +156,27 @@ tooltip {
   padding-right: 22px;
 }
 #custom-left2 {
-  color: @cpuinfo;
+  color: @around1;
   background: @main-bg;
   border-radius: 10px;
   padding-left: 3px;
+  margin-bottom: -1px;
 }
-#custom-cpuinfo {
-  background: @cpuinfo;
-  padding-left: 1px;
+#temperature {
+  background: @around1;
+  padding-left: 12px;
   padding-right: 0;
 }
 
 /* == Memory == */
 
 #custom-left3 {
-  color: @memory;
-  background: @cpuinfo;
-  padding-left: 3px;
+  color: @around2;
+  background: @around1;
+  padding-left: 12px;
 }
 #memory {
-  background: @memory;
+  background: @around2;
   padding-left: 1px;
   padding-right: 0;
 }
@@ -166,17 +190,16 @@ tooltip {
 /* == CPU == */
 
 #custom-left4 {
-  color: @cpu;
-  background: @memory;
+  color: @around3;
+  background: @around2;
   padding-left: 3px;
 }
-#custom-cpu {
-  background: @cpu;
+#cpu {
+  background: @around3;
+  padding: 0 6px;
 }
 #custom-leftin1 {
-  color: @cpu;
-  font-size: 12.2pt;
-  margin-bottom: -2px;
+  color: @around3;
 }
 
 /* == Distro Icon == */
@@ -185,14 +208,12 @@ tooltip {
   color: @distro-bg;
   background: @main-bg;
   text-shadow: -2px 0 2px rgba(0, 0, 0, 0.6);
-  padding-left: 3px;
 }
 #idle_inhibitor {
   color: @distro-fg;
   background: @distro-bg;
-  font-size: 11pt;
-  margin-right: -1px;
-  margin-bottom: -2px;
+  font-size: 20pt;
+  margin-right: -4px;
   padding-right: 0;
   padding-left: 3px;
   text-shadow: 0 0 1.5px rgba(0, 0, 0, 1);
@@ -205,22 +226,21 @@ tooltip {
 /* == Time == */
 
 #custom-rightin1 {
-  color: @time;
-  font-size: 12.2pt;
-  margin-bottom: -2px;
+  color: @around3;
 }
 #clock.time {
-  background: @time;
+  background: @around3;
 }
 #custom-right3 {
-  color: @time;
-  background: @date;
+  font-size: 23pt;
+  color: @around3;
+  background: @around2;
 }
 
 /* == Date == */
 
 #clock.date {
-  background: @date;
+  background: @around2;
 }
 #clock.date:hover {
   color: @hover-fg;
@@ -228,8 +248,8 @@ tooltip {
   box-shadow: none;
 }
 #custom-right4 {
-  color: @date;
-  background: @tray;
+  color: @around2;
+  background: @around1;
 }
 
 /* == Tray == */
@@ -237,7 +257,7 @@ tooltip {
 #custom-wifi {
   padding-left: 5px;
   padding-right: 8px;
-  background: @tray;
+  background: @around1;
 }
 #custom-wifi:hover {
   color: @hover-fg;
@@ -247,7 +267,7 @@ tooltip {
 
 #bluetooth {
   padding-right: 5px;
-  background: @tray;
+  background: @around1;
 }
 #bluetooth:hover {
   color: @hover-fg;
@@ -257,7 +277,7 @@ tooltip {
 
 #custom-update {
   padding-right: 8px;
-  background: @tray;
+  background: @around1;
 }
 #custom-update:hover {
   color: @hover-fg;
@@ -265,7 +285,7 @@ tooltip {
   box-shadow: none;
 }
 #custom-right5 {
-  color: @tray;
+  color: @around1;
   background: @main-bg;
 }
 
@@ -282,15 +302,19 @@ tooltip {
   box-shadow: none;
 }
 
+#network {
+  font-size: 11pt;
+  margin: 0px 6px;
+}
 /* == Output Device == */
 
 #custom-left6 {
-  color: @pulseaudio;
+  color: @around1;
   background: @main-bg;
   padding-left: 3px;
 }
 #pulseaudio {
-  background: @pulseaudio;
+  background: @around1;
 }
 #pulseaudio:hover {
   color: @hover-fg;
@@ -338,20 +362,18 @@ tooltip {
 /* == Power Button == */
 
 #custom-leftin2 {
-  color: @battery;
+  color: @around3;
   background: @main-bg;
-  font-size: 12.2pt;
-  margin-bottom: -2px;
 }
 #custom-power {
   color: @main-bg;
   background: @power;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
   box-shadow: 1px 0 2px 1px rgba(0, 0, 0, 0.6);
-  border-radius: 20px;
-  margin: 2px 4px 2px 0;
-  padding-right: 6px;
-  padding-left: 9px;
+  margin: 0px 6px 0px 0px;
+  border-radius: 28px;
+  padding-right: 8px;
+  padding-left: 14px;
 }
 #custom-power:hover {
   color: @hover-fg;
