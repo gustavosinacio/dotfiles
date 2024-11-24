@@ -21,7 +21,7 @@
   border: none;
   border-radius: 0;
   font-family: "SauceCodePro Nerd Font", "Segoe UI", "Ubuntu";
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
 }
 
@@ -85,7 +85,6 @@ tooltip label {
 }
 
 #taskbar button {
-  /*min-width: 130px;*/
   border-bottom: 3px solid rgba(255, 255, 255, 0.3);
   margin-left: 2px;
   margin-right: 2px;
@@ -108,14 +107,13 @@ tooltip label {
 
 #cpu,
 #disk,
-#memory {
+#memory,
+#temperature {
   padding: 3px;
   margin: 0px 5px;
 }
 
 #temperature {
-  color: white;
-  font-size: 16px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #temperature.critical {
@@ -123,7 +121,6 @@ tooltip label {
   color: @warning_color;
   font-size: initial;
   border-bottom: 3px dashed @warning_color;
-  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #window {
@@ -163,19 +160,18 @@ tooltip label {
 }
 
 #network {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 0 8px 0 5px;
 }
 
 #language {
-  padding-left: 5px;
   padding-right: 5px;
 }
 
 #clock {
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-bottom: 3px solid #fff;
 }
 
 #clock:hover {
