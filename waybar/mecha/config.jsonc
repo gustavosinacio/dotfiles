@@ -17,7 +17,7 @@
     "custom/right5",
 
     "custom/paddw",
-    //"hyprland/window",
+    "hyprland/window",
   ],
   "modules-center": [
     "custom/paddc",
@@ -99,6 +99,7 @@
       "~": "  Terminal",
       "zsh": "  Terminal",
       "kitty": "  Terminal",
+      "alacritty": "  Terminal",
       "sejjy@archlinux:(.*)": "  Terminal",
       "(.*)sejjy@archlinux:~": "  Terminal",
 
