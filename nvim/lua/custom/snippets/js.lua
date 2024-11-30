@@ -24,6 +24,14 @@ ls.add_snippets("all", {
     t(")"),
     i(0), -- Final cursor position
   }),
+  s("cc", {
+    t("console.log('\\x1b[31m9821"),
+    i(1), -- First placeholder
+    t("', '\\x1b[32m', "),
+    i(2), -- Second placeholder
+    t(", '\\x1b[0m')"),
+    i(0), -- Final cursor position
+  }),
 }, {
   key = "all",
 })

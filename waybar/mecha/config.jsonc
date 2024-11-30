@@ -44,6 +44,7 @@
 
     "custom/wifi", // wi-fi
     "bluetooth", // bluetooth
+    "hyprland/language",
     "custom/update", // system update
     "custom/right5",
   ],
@@ -81,6 +82,10 @@
       "4": [],
       "5": [],
     },
+  },
+
+  "hyprland/language": {
+    "format": "{short} {variant}",
   },
 
   "hyprland/window": {
