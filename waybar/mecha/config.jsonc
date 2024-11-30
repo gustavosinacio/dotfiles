@@ -75,13 +75,7 @@
   "hyprland/workspaces": {
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-    },
+    "persistent-workspaces": {},
   },
 
   "hyprland/language": {
@@ -124,8 +118,8 @@
 
       // == Media ==
 
-      "(.*)Spotify": "<span foreground='#a6e3a1'> </span> Spotify",
-      "(.*)Spotify Premium": "<span foreground='#a6e3a1'> </span> Spotify Premium",
+      "(.*)Spotify": "<span foreground='#1ED760'> </span> Spotify",
+      "(.*)Spotify Premium": "<span foreground='#1ED760'> </span> Spotify Premium",
 
       "OBS(.*)": "<span foreground='#a6adc8'>󰐌 </span> OBS Studio",
 
@@ -323,9 +317,9 @@
 
     "tooltip": true,
     "tooltip-format": "Device: {desc}",
-    //"on-click": "~/.local/share/bin/volume-control.sh -o m",
-    //"on-scroll-up": "~/.local/share/bin/volume-control.sh -o i",
-    //"on-scroll-down": "~/.local/share/bin/volume-control.sh -o d",
+    "on-click": "~/dotfiles/waybar/mecha/scripts/volume-control.sh -o m",
+    "on-scroll-up": "~/dotfiles/waybar/mecha/scripts/volume-control.sh -o i",
+    "on-scroll-down": "~/dotfiles/waybar/mecha/scripts/volume-control.sh -o d",
     "min-length": 6,
     "max-length": 6,
   },
