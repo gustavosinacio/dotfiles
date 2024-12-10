@@ -2,5 +2,5 @@
   program = "tmux"
 
 [font]
-  size = 14
+  size = 30
 
