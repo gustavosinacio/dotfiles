@@ -63,14 +63,14 @@ return {
               group = augroup,
               buffer = bufnr,
               callback = function()
-                vim.lsp.buf.format({
-                  async = false,
-                  -- Exclude listed formatters from LSP servers
-                  -- This is done to avoid multiple formatting
-                  filter = function(client)
-                    return filterServers(client, disabledLSPsFromFormatting)
-                  end,
-                })
+                -- vim.lsp.buf.format({
+                --   async = false,
+                --   -- Exclude listed formatters from LSP servers
+                --   -- This is done to avoid multiple formatting
+                --   filter = function(client)
+                --     return filterServers(client, disabledLSPsFromFormatting)
+                --   end,
+                -- })
               end,
             })
           end

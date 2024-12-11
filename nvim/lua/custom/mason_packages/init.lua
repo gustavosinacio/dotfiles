@@ -31,7 +31,7 @@ local codeActions = {
 }
 
 local diagnostics = {
-  "eslint",
+  -- "eslint",
   "yamllint",
 }
 
@@ -39,6 +39,7 @@ local disableFormattingLSPs = {
   "tsserver",
   "ts_ls",
   "typescript-tools",
+  "typescript-language-server",
   "bashls",
 }
 
