@@ -125,10 +125,7 @@ nnoremap <leader>n <cmd>cnext<CR>
 nnoremap <leader>p <cmd>cprev<CR>
 
 nnoremap <leader>tt <cmd>Ex<CR>
-
-nnoremap <C-f> <cmd>silent !tmux neww tmwnizer<CR>
 " --------------------------------------------------
-
 
 "colorscheme zaibatsu
 "colorscheme lunaperche
