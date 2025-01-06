@@ -19,3 +19,5 @@ for _, ft_path in
 do
   loadfile(ft_path)()
 end
+
+vim.cmd([[colorscheme tokyonight-storm]])

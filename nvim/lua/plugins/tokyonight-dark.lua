@@ -18,7 +18,6 @@ return {
         vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#fafaff" })
       end,
     })
-    vim.cmd([[colorscheme tokyonight-moon]])
   end,
   {
     "tiagovla/tokyodark.nvim",
@@ -49,7 +48,6 @@ return {
           vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#fafaff" })
         end,
       })
-      -- vim.cmd([[colorscheme tokyodark]])
     end,
   },
 }

@@ -33,6 +33,12 @@ return {
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
+    vim.keymap.set("n", MainMod.."]>", function()
+      harpoon:list():next()
+    end)
+    vim.keymap.set("n", MainMod.."[>", function()
+      harpoon:list():prev()
+    end)
     -- Harpoon select file
     vim.keymap.set("n", "<leader>1", function()
       harpoon:list():select(1)
