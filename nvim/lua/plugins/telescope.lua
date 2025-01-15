@@ -34,7 +34,7 @@ return {
         },
         pickers = {
           find_files = {
-            hidden = true,
+            hidden = false,
           },
         },
         extensions = {
@@ -63,12 +63,7 @@ return {
         { desc = "[S]earch by [G]rep" }
       )
 
-      vim.keymap.set("n", "<leader>swg", function()
-        local word = vim.fn.expand("<cword>")
-        builtin.grep_string({ search = word })
-      end, { desc = "[S]earch <cword> by [G]rep" })
-
-      vim.keymap.set("n", "<leader>sWg", function()
+      vim.keymap.set("n", "<leader>sW", function()
         local word = vim.fn.expand("<cWORD>")
         builtin.grep_string({ search = word })
       end, { desc = "[S]earch <cWORD> by [G]rep" })
@@ -109,12 +104,12 @@ return {
         builtin.resume,
         { desc = "[S]earch [R]esume" }
       )
-      vim.keymap.set(
-        "n",
-        "<leader>s.",
-        builtin.oldfiles,
-        { desc = '[S]earch Recent Files ("." for repeat)' }
-      )
+      -- vim.keymap.set(
+      --   "n",
+      --   "<leader>s.",
+      --   builtin.oldfiles,
+      --   { desc = '[S]earch Recent Files ("." for repeat)' }
+      -- )
       vim.keymap.set(
         "n",
         "<leader><leader>",
@@ -128,7 +123,7 @@ return {
         builtin.current_buffer_fuzzy_find(
           require("telescope.themes").get_dropdown({
             winblend = 20,
-            previewer = false,
+            previewer = true,
           })
         )
       end, { desc = "[/] Fuzzily search in current buffer" })
@@ -148,15 +143,55 @@ return {
       end, { desc = "[S]earch [N]eovim files" })
 
       -- open file_browser with the path of the current buffer
-      -- vim.keymap.set(
-      --   "n",
-      --   "<space>fb",
-      --   ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-      --   { desc = "[F]ile [B]rowse" }
-      -- )
+      vim.keymap.set(
+        "n",
+        "<space>ef",
+        ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+        { desc = "[F]ile [B]rowse" }
+      )
 
       telescope.load_extension("live_grep_args")
       -- telescope.load_extension("file_browser")
+
+      local action_state = require("telescope.actions.state")
+      local actions = require("telescope.actions")
+
+      Buffer_searcher = function()
+        builtin.buffers({
+          sort_mru = true,
+          ignore_current_buffer = false,
+          show_all_buffers = true,
+          attach_mappings = function(prompt_bufnr, map)
+            local refresh_buffer_searcher = function()
+              actions.close(prompt_bufnr)
+              vim.schedule(Buffer_searcher)
+            end
+
+            local delete_buf = function()
+              local selection = action_state.get_selected_entry()
+              vim.api.nvim_buf_delete(selection.bufnr, { force = true })
+              refresh_buffer_searcher()
+            end
+
+            local delete_multiple_buf = function()
+              local picker = action_state.get_current_picker(prompt_bufnr)
+              local selection = picker:get_multi_selection()
+              for _, entry in ipairs(selection) do
+                vim.api.nvim_buf_delete(entry.bufnr, { force = false })
+              end
+              refresh_buffer_searcher()
+            end
+
+            map("n", "dd", delete_buf)
+            map("n", "<C-d>", delete_multiple_buf)
+            map("i", "<C-d>", delete_multiple_buf)
+
+            return true
+          end,
+        })
+      end
+
+      vim.keymap.set("n", "<leader>ee", Buffer_searcher, {})
     end,
   },
   {
