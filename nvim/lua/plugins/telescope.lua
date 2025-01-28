@@ -110,12 +110,12 @@ return {
       --   builtin.oldfiles,
       --   { desc = '[S]earch Recent Files ("." for repeat)' }
       -- )
-      vim.keymap.set(
-        "n",
-        "<leader><leader>",
-        builtin.buffers,
-        { desc = "[ ] Find existing buffers" }
-      )
+      -- vim.keymap.set(
+      --   "n",
+      --   "<leader><leader>",
+      --   builtin.buffers,
+      --   { desc = "[ ] Find existing buffers" }
+      -- )
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set("n", "<leader>/", function()
@@ -162,9 +162,13 @@ return {
           ignore_current_buffer = false,
           show_all_buffers = true,
           attach_mappings = function(prompt_bufnr, map)
+            -- Move to normal mode on opening
+            vim.api.nvim_input("<Esc>")
+
             local refresh_buffer_searcher = function()
               actions.close(prompt_bufnr)
               vim.schedule(Buffer_searcher)
+              vim.cmd("normal! 0")
             end
 
             local delete_buf = function()
@@ -191,7 +195,7 @@ return {
         })
       end
 
-      vim.keymap.set("n", "<leader>ee", Buffer_searcher, {})
+      vim.keymap.set("n", "<leader><leader>", Buffer_searcher, {})
     end,
   },
   {
