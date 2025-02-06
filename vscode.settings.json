@@ -1,0 +1,82 @@
+{
+  "window.commandCenter": true,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "trailing",
+  "files.exclude": {
+    ".idea": true
+  },
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.leader": " ",
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "vim.insertModeKeyBindingsNonRecursive": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Esc>"],
+      "after": ["<cmd>", "nohlsearch", "<CR>"]
+    },
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["\\"],
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+    {
+      "before": ["<leader>", "s", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "s", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["tab"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["s-tab"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["editor.action.marker.this"]
+    }
+  ],
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [],
+  "vim.visualModeKeyBindingsNonRecursive": [],
+  "vim.vimrc.enable": true,
+  "vim.highlightedyank.color": "#00aa0060",
+  "vim.hlsearch": true,
+  "vim.enableNeovim": true,
+  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+  "git.openRepositoryInParentFolders": "always",
+  "vim.showMarksInGutter": true,
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block-outline",
+  "vim.cursorStylePerMode.visual": "block-outline",
+  "vim.cursorStylePerMode.visualblock": "block-outline",
+  "vim.cursorStylePerMode.visualline": "block"
+}
