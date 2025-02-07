@@ -94,7 +94,6 @@ set wildmenu
 ":helpgrep with grep goes into the quicklist
 
 " -- Keymaps ---------------------------------------
-nnoremap <leader>tt <cmd>Explore<CR>
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <Esc> <cmd>nohlsearch<CR>
@@ -118,14 +117,5 @@ nnoremap <down> <cmd>echo "Use j to move!!"<CR>
 
 xnoremap <leader>p "_dP
 
-vnoremap K <cmd>m '<-2<CR>gv=gv
-vnoremap J <cmd>m '>+1<CR>gv=gv
-
 nnoremap <leader>n <cmd>cnext<CR>
 nnoremap <leader>p <cmd>cprev<CR>
-
-nnoremap <leader>tt <cmd>Ex<CR>
-" --------------------------------------------------
-
-"colorscheme zaibatsu
-"colorscheme lunaperche
