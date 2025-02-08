@@ -4,6 +4,7 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
+  "editor.fontSize": 20,
   "editor.tabSize": 2,
   "editor.renderWhitespace": "trailing",
   "files.exclude": {
@@ -28,10 +29,6 @@
       "commands": ["editor.action.formatDocument"]
     },
     {
-      "before": ["<leader>", "x"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
       "before": ["\\"],
       "commands": ["workbench.explorer.fileView.focus"]
     },
@@ -44,12 +41,16 @@
       "commands": ["workbench.action.findInFiles"]
     },
     {
-      "before": ["tab"],
-      "commands": ["workbench.action.nextEditor"]
+      "before": ["<leader>", "g", "p"],
+      "commands": ["git.openLineChange"]
     },
     {
-      "before": ["s-tab"],
-      "commands": ["workbench.action.previousEditor"]
+      "before": ["<leader>", "g", "p"],
+      "commands": ["git.openChange"]
+    },
+    {
+      "before": ["<leader>", "h", "r"],
+      "commands": ["git.revertSelectedRanges"]
     },
     {
       "before": ["]", "d"],
@@ -102,14 +103,43 @@
     {
       "before": ["g", "i"],
       "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["l", "g"],
+      "commands": ["lazygit.openLazygit"]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["editor.action.goToNextReference"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["editor.action.goToPreviousReference"]
     }
+
+    // {
+    //   "before": ["n"],
+    //   "after": ["n", "z", "z"]
+    // },
+    // { "before": ["<c-d>"],
+    //   "after": ["<c-d>", "z", "z"]
+    // },
+    // {
+    //   "before": ["<c-u>"],
+    //   "after": ["<c-u>", "z", "z"]
+    // },
+    // {
+    //   "before": ["<Esc>"],
+    //   "commands": [":nohl"]
+    // }
   ],
 
   "vim.handleKeys": {
     "<C-b>": false,
     "<C-f>": false,
     "<C-y>": false,
-    "<C-e>": false
+    "<C-e>": false,
+    "<C-w>": false
     // "<C-v>": false,
     // "<C-s>": false,
     // "<C-z>": false,
@@ -121,14 +151,31 @@
   },
   "vim.operatorPendingModeKeyBindingsNonRecursive": [],
   "vim.visualModeKeyBindingsNonRecursive": [],
-  "vim.vimrc.enable": false,
-  "vim.highlightedyank.color": "#00aa0060",
+  "vim.vimrc.enable": true,
+  "vim.highlightedyank.color": "#00aa00",
   "vim.hlsearch": true,
   "vim.enableNeovim": true,
-  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+  "vim.neovimConfigPath": "~/dotfiles/vscode/vscode.init.vim",
+  "vim.vimrc.path": "~/dotfiles/vscode/.vscode.vimrc",
   "git.openRepositoryInParentFolders": "always",
   "editor.lineNumbers": "relative",
   "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "vim.statusBarColorControl": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#181825",
+    "statusBar.noFolderBackground": "#181825",
+    "statusBar.debuggingBackground": "#181825",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
+  "vim.highlightedyank.textColor": "#00aa00",
+  "vim.incsearch": true,
+  "vim.statusBarColors.normal": ["#181825", "#ffffff"],
+  "vim.statusBarColors.insert": ["#007acc", "#ffffff"],
+  "vim.statusBarColors.visual": ["#5f00af", "#ffffff"],
+  "vim.statusBarColors.visualline": ["#5f00af", "#ffffff"],
+  "vim.statusBarColors.replace": ["#5f00af", "#ffffff"],
+  "vim.statusBarColors.commandlineinprogress": ["#005f5f", "#ffffff"]
 }
