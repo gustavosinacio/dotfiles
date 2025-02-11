@@ -46,7 +46,7 @@
   autoSetupRemote = true
 
 [rerere]
-	enabled = true
+	enabled = false
 
 [column]
 	ui = auto

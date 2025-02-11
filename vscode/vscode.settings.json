@@ -17,10 +17,6 @@
   "vim.insertModeKeyBindingsNonRecursive": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<Esc>"],
-      "after": [":nohlsearch"]
-    },
-    {
       "before": ["<leader>", "a"],
       "commands": ["workbench.view.explorer"]
     },
@@ -41,7 +37,7 @@
       "commands": ["workbench.action.findInFiles"]
     },
     {
-      "before": ["<leader>", "g", "p"],
+      "before": ["<leader>", "h", "p"],
       "commands": ["git.openLineChange"]
     },
     {
@@ -116,22 +112,6 @@
       "before": ["<leader>", "p"],
       "commands": ["editor.action.goToPreviousReference"]
     }
-
-    // {
-    //   "before": ["n"],
-    //   "after": ["n", "z", "z"]
-    // },
-    // { "before": ["<c-d>"],
-    //   "after": ["<c-d>", "z", "z"]
-    // },
-    // {
-    //   "before": ["<c-u>"],
-    //   "after": ["<c-u>", "z", "z"]
-    // },
-    // {
-    //   "before": ["<Esc>"],
-    //   "commands": [":nohl"]
-    // }
   ],
 
   "vim.handleKeys": {
@@ -139,9 +119,10 @@
     "<C-f>": false,
     "<C-y>": false,
     "<C-e>": false,
+    "<C-m>": false,
+    "<C-s>": false,
     "<C-w>": false
     // "<C-v>": false,
-    // "<C-s>": false,
     // "<C-z>": false,
     // "<C-p>": false,
     // "<C-q>": false,
@@ -164,18 +145,19 @@
   },
   "vim.statusBarColorControl": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#181825",
-    "statusBar.noFolderBackground": "#181825",
-    "statusBar.debuggingBackground": "#181825",
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
   },
   "vim.highlightedyank.textColor": "#00aa00",
-  "vim.incsearch": true,
-  "vim.statusBarColors.normal": ["#181825", "#ffffff"],
+  // "vim.incsearch": true,
   "vim.statusBarColors.insert": ["#007acc", "#ffffff"],
+  "vim.statusBarColors.searchinprogressmode": ["#ea5605", "#ffffff"],
   "vim.statusBarColors.visual": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.visualline": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.replace": ["#5f00af", "#ffffff"],
-  "vim.statusBarColors.commandlineinprogress": ["#005f5f", "#ffffff"]
+  "vim.statusBarColors.commandlineinprogress": ["#005f5f", "#ffffff"],
+  "git.autofetch": true
 }

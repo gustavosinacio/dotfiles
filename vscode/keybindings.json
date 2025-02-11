@@ -163,6 +163,17 @@
   {
     "key": "space s f",
     "command": "workbench.action.quickOpen",
-    "when": "!editorFocus && !terminalFocus"
+    "when": "!inputBoxFocus && !inputFocus && !textInputFocus && !editorFocus && !terminalFocus"
+    // "when": "!inputBoxFocus && !inputFocus && !textInputFocus && !editorFocus && !terminalFocus"
+  },
+  {
+    "key": "space s g",
+    "command": "workbench.view.search",
+    "when": "!inputFocus && !editorFocus && !terminalFocus"
+  },
+  {
+    "key": "space l g",
+    "command": "lazygit.openLazygit",
+    "when": "!inputFocus && !editorFocus && !terminalFocus"
   }
 ]

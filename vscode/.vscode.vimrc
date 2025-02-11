@@ -35,6 +35,3 @@ nnoremap H Hzz
 nnoremap L Lzz
 
 nnoremap J mzJ`z
-
-nnoremap <leader>n <cmd>cnext<CR>
-nnoremap <leader>p <cmd>cprev<CR>
