@@ -64,12 +64,12 @@
       "commands": ["editor.action.marker.prev"]
     },
     {
-      "before": ["<leader>", "e"],
-      "commands": ["editor.action.marker.this"]
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
     },
     {
-      "before": ["<leader>", "k", "s"],
-      "commands": ["workbench.action.openGlobalKeybindings"]
+      "before": ["<leader>", "e"],
+      "commands": ["editor.action.marker.this"]
     },
     {
       "before": ["<leader>", "1"],
@@ -143,7 +143,6 @@
   "vim.highlightedyank.textColor": "#00aa00",
   "vim.hlsearch": true,
   "vim.vimrc.enable": true,
-  // "vim.neovimConfigPath": "~/dotfiles/vscode/vscode.init.vim",
   "vim.vimrc.path": "~/dotfiles/vscode/.vscode.vimrc",
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.insert": ["#007acc", "#ffffff"],
@@ -158,5 +157,12 @@
     "statusBar.debuggingBackground": "#005f5f",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
-  }
+  },
+  "projectManager.sortList": "Path",
+  "projectManager.tags": [
+    "Personal",
+    "Work",
+    "Context",
+    "Application"
+  ],
 }
