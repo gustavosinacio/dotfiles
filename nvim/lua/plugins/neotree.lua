@@ -175,7 +175,7 @@ return {
           -- never_show_by_pattern = { ".null-ls_*" },
         },
         follow_current_file = { enabled = true, leave_dirs_open = false },
-        group_empty_dirs = true,
+        group_empty_dirs = false,
         hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
         -- in whatever position is specified in window.position
         -- "open_current",  -- netrw disabled, opening a directory opens within the

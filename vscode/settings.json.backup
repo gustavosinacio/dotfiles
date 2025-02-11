@@ -1,0 +1,193 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "other": "off",
+      "strings": "off"
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.wordWrap": "on"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnType": true
+  },
+  "[scss]": {
+    // "editor.defaultFormatter": "vscode.css-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dateTime.padSeconds": true,
+  "dateTime.showSeconds": true,
+  "diffEditor.codeLens": true,
+  "diffEditor.experimental.showMoves": true,
+  "editor.accessibilitySupport": "off",
+  "editor.autoIndent": "full",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // "editor.fontFamily": "Fira Code, Ink Free",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free", // === !== == != -> --> |- -| // "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free", // === !== == != -> --> |- -|
+
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "500",
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.inlineSuggest.enabled": true,
+  "editor.letterSpacing": 0.5,
+  "editor.lineHeight": 20,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.occurrencesHighlight": "singleFile",
+  "editor.renderLineHighlight": "all",
+  "editor.rulers": [80],
+  "editor.semanticHighlighting.enabled": "configuredByTheme",
+  "editor.tabSize": 2,
+  "eslint.format.enable": true,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.ignoreMissingGitWarning": true,
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "gitlens.defaultDateFormat": "MMMM D, YYYY HH:mm",
+  "gitlens.defaultDateShortFormat": "MMM D, HH:mm",
+  "gitlens.defaultTimeFormat": "HH:mm",
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "stash-apply:command",
+    "stash-push:command",
+    "switch:command"
+  ],
+  "gitlens.views.stashes.files.layout": "list",
+  "importSorter.generalConfiguration.sortImportsInDirectory": true,
+  "importSorter.generalConfiguration.sortOnBeforeSave": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "kotlin.debugAdapter.enabled": false,
+  "kotlin.languageServer.enabled": false,
+  "macros": {
+    "addQuotes": [
+      {
+        "args": {
+          "text": "\"\""
+        },
+        "command": "type"
+      },
+      "cursorLeft"
+    ],
+    "addSingleQuotes": [
+      {
+        "args": {
+          "text": "''"
+        },
+        "command": "type"
+      },
+      "cursorLeft"
+    ]
+  },
+  "omnisharp.useModernNet": false,
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.integratedConsole.suppressStartupBanner": true,
+  "projectManager.git.baseFolders": ["~/github"],
+  "react-native-tools.showUserTips": false,
+  "reactSnippets.settings.importReactOnTop": false,
+  "redhat.telemetry.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredExtensions": ["dae.vscode-refresh-browser"],
+  "symbols.hidesExplorerArrows": false,
+  "terminal.explorerKind": "external",
+  "totalTypeScript.hiddenTips": [
+    "any-type",
+    "array-type",
+    "basic-types",
+    "function-return-type",
+    "interface-declaration",
+    "null-keyword",
+    "optional-object-property",
+    "passing-generics-to-types",
+    "ts-object-type",
+    "type-alias-declaration",
+    "typeof",
+    "typing-function-parameters",
+    "undefined-keyword",
+    "union-type",
+    "variable-type-annotation"
+  ],
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.customTitleBarVisibility": "auto",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "developer-icon-theme",
+
+  "vim.enableNeovim": true,
+  // "vim.neovimConfigPath": "C:\\Users\\gsina\\AppData\\Local\\nvim\\init.lua",
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "~/dotfiles/vscode/vscode.init.vim",
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindingsNonRecursive": [],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+
+  "zenMode.hideLineNumbers": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.activityBar.location": "top",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "go.toolsManagement.autoUpdate": true,
+  "editor.wordWrap": "on",
+  "git.openRepositoryInParentFolders": "never"
+}

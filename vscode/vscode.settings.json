@@ -1,20 +1,27 @@
 {
-  "window.commandCenter": true,
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "debug.console.fontSize": 14,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
   "editor.fontSize": 20,
-  "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "trailing",
-  "files.exclude": {
-    ".idea": true
+  "editor.tabSize": 2,
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "always",
+  "terminal.integrated.fontSize": 18,
+  "window.commandCenter": true,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
+
+  // Vim ------------------------------------------------
   "vim.camelCaseMotion.enable": true,
-  "vim.easymotion": true,
   "vim.leader": " ",
-  "vim.commandLineModeKeyBindingsNonRecursive": [],
-  "vim.insertModeKeyBindingsNonRecursive": [],
+  "vim.easymotion": true,
+  // "vim.commandLineModeKeyBindingsNonRecursive": [],
+  // "vim.insertModeKeyBindingsNonRecursive": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "a"],
@@ -113,7 +120,6 @@
       "commands": ["editor.action.goToPreviousReference"]
     }
   ],
-
   "vim.handleKeys": {
     "<C-b>": false,
     "<C-f>": false,
@@ -130,34 +136,27 @@
     // "<C-x>": false,
     // "<C-a>": false,
   },
-  "vim.operatorPendingModeKeyBindingsNonRecursive": [],
-  "vim.visualModeKeyBindingsNonRecursive": [],
-  "vim.vimrc.enable": true,
-  "vim.highlightedyank.color": "#00aa00",
-  "vim.hlsearch": true,
+  // "vim.operatorPendingModeKeyBindingsNonRecursive": [],
+  // "vim.visualModeKeyBindingsNonRecursive": [],
   "vim.enableNeovim": true,
-  "vim.neovimConfigPath": "~/dotfiles/vscode/vscode.init.vim",
-  "vim.vimrc.path": "~/dotfiles/vscode/.vscode.vimrc",
-  "git.openRepositoryInParentFolders": "always",
-  "editor.lineNumbers": "relative",
-  "[snippets]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "vim.statusBarColorControl": true,
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#005f5f",
-    "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f",
-    "statusBar.foreground": "#ffffff",
-    "statusBar.debuggingForeground": "#ffffff"
-  },
+  "vim.highlightedyank.color": "#00aa00",
   "vim.highlightedyank.textColor": "#00aa00",
-  // "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.vimrc.enable": true,
+  // "vim.neovimConfigPath": "~/dotfiles/vscode/vscode.init.vim",
+  "vim.vimrc.path": "~/dotfiles/vscode/.vscode.vimrc",
+  "vim.statusBarColorControl": true,
   "vim.statusBarColors.insert": ["#007acc", "#ffffff"],
   "vim.statusBarColors.searchinprogressmode": ["#ea5605", "#ffffff"],
   "vim.statusBarColors.visual": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.visualline": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.replace": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.commandlineinprogress": ["#005f5f", "#ffffff"],
-  "git.autofetch": true
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  }
 }
