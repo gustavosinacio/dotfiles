@@ -175,5 +175,18 @@
     "key": "space l g",
     "command": "lazygit.openLazygit",
     "when": "!inputFocus && !editorFocus && !terminalFocus"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "workbench.action.openSettingsJson"
+  },
+  {
+    "key": "ctrl+shift+,",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
+    "key": "ctrl+shift+,",
+    "command": "-editor.action.inPlaceReplace.up",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
