@@ -8,7 +8,7 @@
   {
     "key": "tab",
     "command": "workbench.action.nextEditor",
-    "when": "!terminalFocus"
+    "when": "!terminalFocus && !hasNextTabstop && vim.active && !inDebugRepl && vim.mode != 'Insert'"
   },
   {
     "key": "shift+tab",
@@ -324,5 +324,27 @@
   {
     "key": "ctrl+shift+p",
     "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "alt+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "-editor.action.clipboardCopyAction"
+  },
+  {
+    "key": "alt+c c",
+    "command": "-extension.colorHelper.convert",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+v",
+    "command": "editor.action.clipboardPasteAction"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "-editor.action.clipboardPasteAction"
   }
 ]

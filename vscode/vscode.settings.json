@@ -2,10 +2,12 @@
   "debug.console.fontSize": 14,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
-  "editor.fontSize": 20,
+  "editor.fontSize": 18,
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "trailing",
   "editor.tabSize": 2,
+  "editor.guides.bracketPairs": "active",
+  "editor.rulers": [80, 120],
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
   "terminal.integrated.fontSize": 18,
@@ -165,4 +167,5 @@
     "Context",
     "Application"
   ],
+  "window.menuBarVisibility": "toggle"
 }
