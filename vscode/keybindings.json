@@ -346,5 +346,13 @@
   {
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.action.findInFiles"
   }
 ]
