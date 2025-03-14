@@ -2,7 +2,7 @@
   "debug.console.fontSize": 14,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
-  "editor.fontSize": 18,
+  "editor.fontSize": 14,
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "trailing",
   "editor.tabSize": 2,
@@ -10,12 +10,16 @@
   "editor.rulers": [80, 120],
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontSize": 13,
   "window.commandCenter": true,
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
   "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
 
   // Vim ------------------------------------------------
@@ -120,7 +124,13 @@
     {
       "before": ["<leader>", "p"],
       "commands": ["editor.action.goToPreviousReference"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
     }
+
+
   ],
   "vim.handleKeys": {
     "<C-b>": false,
@@ -168,4 +178,6 @@
     "Application"
   ],
   "window.menuBarVisibility": "toggle"
+  "editor.tabCompletion": "on",
+  "cursor.aipreview.enabled": true,
 }
