@@ -1,7 +1,7 @@
 [general]
 import = [
   "~/.config/alacritty/alacritty-shell.toml",
-  "~/dotfiles/alacritty/tokyonight_moon.toml"
+  "~/.config/alacritty/tokyonight_moon.toml"
 ]
 
 live_config_reload = true
