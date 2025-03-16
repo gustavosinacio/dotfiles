@@ -98,6 +98,8 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <Esc> <cmd>nohlsearch<CR>
 
+nnoremap k kzz
+nnoremap j jzz
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap G Gzz

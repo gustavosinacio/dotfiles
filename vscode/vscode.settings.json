@@ -129,8 +129,6 @@
       "before": ["<leader>", "x"],
       "commands": ["workbench.action.closeActiveEditor"]
     }
-
-
   ],
   "vim.handleKeys": {
     "<C-b>": false,
@@ -163,21 +161,20 @@
   "vim.statusBarColors.visualline": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.replace": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.commandlineinprogress": ["#005f5f", "#ffffff"],
+  "vim.statusBarColors.normal": ["#000000", "#ffffff"],
   "workbench.colorCustomizations": {
-    "statusBar.background": "#005f5f",
-    "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.background": "#000000",
+    "statusBar.noFolderBackground": "#000000",
+    "statusBar.debuggingBackground": "#000000",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
   },
-  "projectManager.sortList": "Path",
-  "projectManager.tags": [
-    "Personal",
-    "Work",
-    "Context",
-    "Application"
-  ],
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
   "editor.tabCompletion": "on",
   "cursor.aipreview.enabled": true,
+  "projectManager.tags": ["Personal", "Work", "Context", "Application"],
+  "projectManager.filterOnFullPath": true,
+  "projectManager.git.baseFolders": ["~/workhub", "~/github"],
+  "projectManager.any.baseFolders": ["~/github"],
+  "projectManager.any.maxDepthRecursion": 1
 }
