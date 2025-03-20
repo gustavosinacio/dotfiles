@@ -6,10 +6,20 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+
+# Run Sketchybar together with AeroSpace
+# sketchbar has a built-in detection of already running process,
+# so it won't be run twice on AeroSpace restart
+after-startup-command = ['exec-and-forget sketchybar']
 
 # Start AeroSpace at login
 start-at-login = true
@@ -132,7 +142,7 @@ alt-0 = 'workspace 10'
 # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
 # alt-b = 'workspace B'
 alt-c = 'workspace C'
-# alt-d = 'workspace D'
+alt-d = 'workspace D'
 alt-e = 'workspace E'
 # alt-f = 'workspace F'
 # alt-g = 'workspace G'
@@ -166,7 +176,7 @@ alt-shift-0 = 'move-node-to-workspace 10'
 # alt-shift-a = 'move-node-to-workspace A'
 # alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
-# alt-shift-d = 'move-node-to-workspace D'
+alt-shift-d = 'move-node-to-workspace D'
 alt-shift-e = 'move-node-to-workspace E'
 # alt-shift-f = 'move-node-to-workspace F'
 # alt-shift-g = 'move-node-to-workspace G'

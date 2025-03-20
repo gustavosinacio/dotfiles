@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 export WORKING_DIRS=(
   "$HOME/github"
   "$HOME/workhub"
