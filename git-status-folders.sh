@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/sh
-
 export GIT_STATUS_DIRS=(
   $HOME/dotfiles
   $HOME/unixverse
