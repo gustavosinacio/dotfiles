@@ -28,10 +28,10 @@ sketchybar --bar "${bar[@]}"
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-	icon.font="JetBrainsMono Nerd Font:Bold:14.0"
-	label.font="JetBrainsMono Nerd Font:Regular:14.0"
-	background.padding_left=2
-	background.padding_right=2
+	icon.font="JetBrainsMono Nerd Font:Bold:13.0"
+	label.font="JetBrainsMono Nerd Font:Regular:13.0"
+	background.padding_left=0
+	background.padding_right=0
 	label.padding_right=12
 	label.color=0xffffffff
 	icon.color=0xff03C03C
@@ -41,8 +41,7 @@ default=(
 	label.padding_left=4
 	background.corner_radius=4
 	background.height=24
-	# background.color=0xee121212
-	background.color=0xee121212
+	background.color=0x00121212
 )
 sketchybar --default "${default[@]}"
 
@@ -57,47 +56,95 @@ front_app_configs=(
 	# background.padding_right="$LEFT_BAR_APP_SPACING"
 )
 
+sketchybar --add item apple.logo left \
+	--set apple.logo icon= \
+	label.drawing=off \
+	click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
+	popup.background.border_width=2 \
+	popup.background.corner_radius=3 \
+	icon.font.size=15 \
+	icon.color=0xffffffff \
+	background.color=0x00000000 \
+	popup.background.border_color=0xff9dd274 \
+	popup.background.color=0xe1000001 \
+	\
+	--add item apple.preferences popup.apple.logo \
+	--set apple.preferences icon= \
+	label="Preferences" \
+	background.padding_left=8 \
+	background.padding_right=8 \
+	background.color=0x00000000 \
+	click_script="open -a 'System Preferences'; sketchybar -m --set apple.logo popup.drawing=off" \
+	\
+	--add item apple.activity popup.apple.logo \
+	--set apple.activity icon= \
+	label="Activity" \
+	background.color=0x00000000 \
+	background.padding_left=8 \
+	background.padding_right=8 \
+	click_script="open -a 'Activity Monitor'; sketchybar -m --set apple.logo popup.drawing=off" \
+	\
+	--add item apple.lock popup.apple.logo \
+	--set apple.lock icon= \
+	label="Lock Screen" \
+	background.color=0x00000000 \
+	background.padding_left=8 \
+	background.padding_right=8 \
+	click_script="pmset displaysleepnow; sketchybar -m --set apple.logo popup.drawing=off"
+
 sketchybar --add item front_app left \
-	--set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+	--set front_app \
+	icon.drawing=off \
+	label.padding_left=16 \
+	label.font.size=15 \
+	background.color=0x00000000 \
+	script="$PLUGIN_DIR/front_app.sh" \
 	"${front_app_configs[@]}" \
 	--subscribe front_app front_app_switched \
 	--add item chevron left \
-	--set chevron icon= label.drawing=off \
-	icon.padding_left=8 \
-	icon.padding_right=8 \
+	--set chevron icon= \
+	label.drawing=off \
+	label.font.size=15 \
+	icon.padding_left=4 \
+	icon.padding_right=0 \
 	background.padding_right=$LEFT_BAR_APP_SPACING \
 	background.padding_left=0 \
-	background.color=0x00ef8fff
+	background.color=0x00000000
 
-# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9")
-# # SPACE_LABELS=("cns" "kde" "TNs" "cms")
-#
-# for i in "${!SPACE_ICONS[@]}"; do
-#
-# 	sid="$(($i + 1))"
-# 	space=(
-# 		space="$sid"
-# 		icon="${SPACE_ICONS[i]}"
-# 		icon.padding_right=8
-# 		icon.padding_left=8
-# 		# background.color=0xf0ffffff
-# 		background.border_color=0xff03C03C
-# 		background.border_width=1
-# 		background.padding_left=0
-# 		background.padding_right=0
-# 		# label="${SPACE_LABELS[i]}"
-# 		label.padding_left=0
-# 		script="$PLUGIN_DIR/space.sh"
-# 	)
-#
-# 	[[ -z ${SPACE_LABELS[i]} ]] && space+=(label.drawing=off)
-#
-# 	sketchybar --add space space."$sid" left \
-# 		--set space."$sid" "${space[@]}"
-# done
+sketchybar --add event aerospace_workspace_change
 
-sketchybar --add bracket spaces $default left \
-	--set space[1] "${space[1]}"
+sketchybar --add item current left \
+	--subscribe current aerospace_workspace_change mouse.clicked \
+	--set current \
+	drawing=on \
+	script="$PLUGIN_DIR/aerospace_current.sh" \
+	click_script="sketchybar --set current popup.drawing=toggle" \
+	icon.drawing=off \
+	label.padding_left=8 \
+	label.padding_right=10 \
+	label.padding_left=8 \
+	label.padding_right=10 \
+	popup.background.border_width=1 \
+	popup.background.corner_radius=8 \
+	popup.background.padding_left=10 \
+	popup.background.padding_right=10 \
+	popup.horizontal=true \
+	popup.background.border_color=0xff9dd274 \
+	popup.background.color=0xe1000001
+
+# Get all workspace names to populate the popup
+WORKSPACES=$(aerospace list-workspaces --all)
+# Add each workspace as an item in the popup
+for WORKSPACE in $WORKSPACES; do
+	sketchybar --add item "space_$WORKSPACE" popup.current \
+		--set "space_$WORKSPACE" \
+		label="$WORKSPACE" \
+		icon.drawing=off \
+		background.padding_left=8 \
+		background.padding_right=8 \
+		background.color=0x00000000 \
+		click_script="aerospace workspace $WORKSPACE; sketchybar --set current popup.drawing=off"
+done
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
@@ -125,18 +172,16 @@ sketchybar --add item clock right \
 
 sketchybar --add item git_status right \
 	--set git_status \
-   update_freq=5 \
-	icon.font="JetBrainsMono Nerd Font:Bold:11.0" \
-	label.font="JetBrainsMono Nerd Font:Regular:11.0" \
-   script="$PLUGIN_DIR/gits.sh"
-
-sketchybar --add event aerospace_workspace_change
-
-sketchybar --add item current left \
-	--subscribe current aerospace_workspace_change \
-	--set current \
-	script="$PLUGIN_DIR/aerospace_current.sh" \
-	icon.padding_left=0
+	update_freq=5 \
+	icon= \
+	label.font.size=11 \
+	icon.font.size=18 \
+	icon.padding_left=10 \
+	icon.color=0xffF17013 \
+	background.padding_left=8 \
+	background.padding_right=8 \
+	background.corner_radius=4 \
+	script="$PLUGIN_DIR/gits.sh"
 
 # # Add workspaces for all monitors
 # for monitor in $(aerospace list-monitors --format "%{monitor-appkit-nsscreen-screens-id}"); do
