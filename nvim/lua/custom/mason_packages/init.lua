@@ -16,9 +16,9 @@ LSPs = vim.tbl_deep_extend("force", LSPs, bash)
 local formattersAndLinters = {
   "stylua",
   "prettier",
-  "gofumpt",
-  "goimports",
-  "golines",
+  -- "gofumpt",
+  -- "goimports",
+  -- "golines",
   "black",
   "shfmt",
   -- "yamlfix",
@@ -26,8 +26,8 @@ local formattersAndLinters = {
 }
 
 local codeActions = {
-  "gomodifytags",
-  "impl",
+  -- "gomodifytags",
+  -- "impl",
 }
 
 local diagnostics = {
