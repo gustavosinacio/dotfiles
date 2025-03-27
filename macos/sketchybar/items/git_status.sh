@@ -3,7 +3,7 @@
 sketchybar --add item git_status $1 \
 	--set git_status \
 	update_freq=30 \
-	script="$PLUGIN_DIR/gits.sh" \
+	script="$PLUGIN_DIR/gits.sh && $PLUGIN_DIR/git_status_update.sh" \
 	icon= \
 	label.font.size=11 \
 	icon.font.size=18 \
@@ -22,7 +22,6 @@ sketchybar --add item git_status $1 \
 	click_script="sketchybar --set git_status popup.drawing=toggle"
 
 # Save the output to a temporary variable
-REPOS=$(~/unixverse/scripts/git-file-report-by-line.sh)
 
 # Use echo and pipe to while loop
 echo "$REPOS" | while read -r REPO; do
