@@ -19,6 +19,7 @@ sketchybar --add item current $1 \
 	popup.background.padding_left=10 \
 	popup.background.padding_right=10 \
 	popup.horizontal=true \
+	popup.drawing=off \
 	popup.background.border_color=0xff9dd274 \
 	popup.background.color=0xe1000001
 
