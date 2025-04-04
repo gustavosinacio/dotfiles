@@ -147,7 +147,7 @@ shift + alt - 6 : yabai -m window --space 6
 shift + alt - 7 : yabai -m window --space 7
 shift + alt - 8 : yabai -m window --space 8
 shift + alt - 9 : yabai -m window --space 9
-  
+
 # swap window
 ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - j : yabai -m window --warp south

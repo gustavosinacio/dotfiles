@@ -176,11 +176,7 @@
   "cursor.aipreview.enabled": true,
   "projectManager.tags": ["Personal", "Work", "Context", "Application"],
   "projectManager.filterOnFullPath": true,
-  "projectManager.git.baseFolders": [
-    "~/workhub",
-    "~/github",
-    "~/dotfiles"
-  ],
+  "projectManager.git.baseFolders": ["~/workhub", "~/github", "~/dotfiles"],
   "projectManager.any.baseFolders": ["~/github"],
   "projectManager.any.maxDepthRecursion": 1,
   "git.confirmSync": false,
