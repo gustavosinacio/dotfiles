@@ -4,7 +4,7 @@ sketchybar --add item apple.logo $1 \
   --set apple.logo icon= \
   label.drawing=off \
   click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
-  popup.background.border_width=2 \
+  popup.background.border_width=1 \
   popup.background.corner_radius=3 \
   icon.font.size=19 \
   icon.color=0xffffffff \

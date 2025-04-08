@@ -183,5 +183,6 @@
   "gitlens.graph.minimap.enabled": false,
   "[shellscript]": {
     "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
-  }
+  },
+  "git.enableSmartCommit": true
 }

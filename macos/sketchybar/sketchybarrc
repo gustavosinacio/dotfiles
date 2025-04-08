@@ -11,7 +11,7 @@ bar=(
 	position=top
 	height=32
 	# blur_radius=30
-	color=0xa0000000
+	color=0xe0000000
 	font_smoothing=on
 )
 
