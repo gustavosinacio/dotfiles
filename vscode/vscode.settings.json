@@ -2,7 +2,7 @@
   "debug.console.fontSize": 14,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "trailing",
   "editor.tabSize": 2,
@@ -164,7 +164,9 @@
   "vim.statusBarColors.replace": ["#5f00af", "#ffffff"],
   "vim.statusBarColors.commandlineinprogress": ["#005f5f", "#ffffff"],
   "vim.statusBarColors.normal": ["#000000", "#ffffff"],
+  "editor.renderLineHighlight": "all",
   "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#0007",
     "statusBar.background": "#000000",
     "statusBar.noFolderBackground": "#000000",
     "statusBar.debuggingBackground": "#000000",
@@ -198,5 +200,20 @@
     "*.db3": "${capture}.${extname}-*",
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
-  }
+  },
+  "cursor.general.globalCursorIgnoreList": [
+    "**/credentials.json",
+    "**/credentials.*.json",
+    "**/secret.json",
+    "**/secrets.json",
+    "**/*.key",
+    "**/*.pem",
+    "**/*.pfx",
+    "**/*.p12",
+    "**/*.crt",
+    "**/*.cer",
+    "**/id_rsa",
+    "**/id_dsa",
+    "**/.ssh/id_*"
+  ],
 }
