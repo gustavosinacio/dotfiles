@@ -177,10 +177,6 @@
     "when": "!inputFocus && !editorFocus && !terminalFocus"
   },
   {
-    "key": "alt+,",
-    "command": "workbench.action.openSettingsJson"
-  },
-  {
     "key": "ctrl+shift+,",
     "command": "workbench.action.openGlobalKeybindingsFile"
   },
@@ -362,5 +358,13 @@
   {
     "key": "ctrl+'",
     "command": "workbench.action.createTerminalEditor"
+  },
+  {
+    "key": "alt+,",
+    "command": "gitlens.diffWithPrevious:editor"
+  },
+  {
+    "key": "alt+.",
+    "command": "gitlens.diffWithNext:editor/title"
   }
 ]

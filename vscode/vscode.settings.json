@@ -1,29 +1,21 @@
 {
   "debug.console.fontSize": 14,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "trailing",
   "editor.tabSize": 2,
   "editor.guides.bracketPairs": "active",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
   "terminal.integrated.fontSize": 13,
   "window.commandCenter": true,
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
-  "[snippets]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
   // Vim ------------------------------------------------
   "vim.camelCaseMotion.enable": true,
   "vim.leader": " ",
@@ -32,104 +24,232 @@
   // "vim.insertModeKeyBindingsNonRecursive": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "a"],
-      "commands": ["workbench.view.explorer"]
+      "before": [
+        "<leader>",
+        "a"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["editor.action.formatDocument"]
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
     },
     {
-      "before": ["\\"],
-      "commands": ["workbench.explorer.fileView.focus"]
+      "before": [
+        "\\"
+      ],
+      "commands": [
+        "workbench.explorer.fileView.focus"
+      ]
     },
     {
-      "before": ["<leader>", "s", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "<leader>",
+        "s",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["<leader>", "s", "g"],
-      "commands": ["workbench.action.findInFiles"]
+      "before": [
+        "<leader>",
+        "s",
+        "g"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
     },
     {
-      "before": ["<leader>", "h", "p"],
-      "commands": ["git.openLineChange"]
+      "before": [
+        "<leader>",
+        "h",
+        "p"
+      ],
+      "commands": [
+        "git.openLineChange"
+      ]
     },
     {
-      "before": ["<leader>", "g", "p"],
-      "commands": ["git.openChange"]
+      "before": [
+        "<leader>",
+        "g",
+        "p"
+      ],
+      "commands": [
+        "git.openChange"
+      ]
     },
     {
-      "before": ["<leader>", "h", "r"],
-      "commands": ["git.revertSelectedRanges"]
+      "before": [
+        "<leader>",
+        "h",
+        "r"
+      ],
+      "commands": [
+        "git.revertSelectedRanges"
+      ]
     },
     {
-      "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
     },
     {
-      "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
     },
     {
-      "before": ["K"],
-      "commands": ["editor.action.showHover"]
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
     },
     {
-      "before": ["<leader>", "e"],
-      "commands": ["editor.action.marker.this"]
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "editor.action.marker.this"
+      ]
     },
     {
-      "before": ["<leader>", "1"],
-      "commands": ["workbench.action.openEditorAtIndex1"]
+      "before": [
+        "<leader>",
+        "1"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex1"
+      ]
     },
     {
-      "before": ["<leader>", "2"],
-      "commands": ["workbench.action.openEditorAtIndex2"]
+      "before": [
+        "<leader>",
+        "2"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex2"
+      ]
     },
     {
-      "before": ["<leader>", "3"],
-      "commands": ["workbench.action.openEditorAtIndex3"]
+      "before": [
+        "<leader>",
+        "3"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex3"
+      ]
     },
     {
-      "before": ["<leader>", "4"],
-      "commands": ["workbench.action.openEditorAtIndex4"]
+      "before": [
+        "<leader>",
+        "4"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex4"
+      ]
     },
     {
-      "before": ["<leader>", "5"],
-      "commands": ["workbench.action.openEditorAtIndex5"]
+      "before": [
+        "<leader>",
+        "5"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex5"
+      ]
     },
     {
-      "before": ["<leader>", "6"],
-      "commands": ["workbench.action.openEditorAtIndex6"]
+      "before": [
+        "<leader>",
+        "6"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex6"
+      ]
     },
     {
-      "before": ["<leader>", "7"],
-      "commands": ["workbench.action.openEditorAtIndex7"]
+      "before": [
+        "<leader>",
+        "7"
+      ],
+      "commands": [
+        "workbench.action.openEditorAtIndex7"
+      ]
     },
     {
-      "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
     },
     {
-      "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
     },
     {
-      "before": ["l", "g"],
-      "commands": ["lazygit.openLazygit"]
+      "before": [
+        "l",
+        "g"
+      ],
+      "commands": [
+        "lazygit.openLazygit"
+      ]
     },
     {
-      "before": ["<leader>", "n"],
-      "commands": ["editor.action.goToNextReference"]
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "editor.action.goToNextReference"
+      ]
     },
     {
-      "before": ["<leader>", "p"],
-      "commands": ["editor.action.goToPreviousReference"]
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "commands": [
+        "editor.action.goToPreviousReference"
+      ]
     },
     {
-      "before": ["<leader>", "x"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
     }
   ],
   "vim.handleKeys": {
@@ -157,14 +277,36 @@
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/dotfiles/vscode/.vscode.vimrc",
   "vim.statusBarColorControl": true,
-  "vim.statusBarColors.insert": ["#007acc", "#ffffff"],
-  "vim.statusBarColors.searchinprogressmode": ["#ea5605", "#ffffff"],
-  "vim.statusBarColors.visual": ["#5f00af", "#ffffff"],
-  "vim.statusBarColors.visualline": ["#5f00af", "#ffffff"],
-  "vim.statusBarColors.replace": ["#5f00af", "#ffffff"],
-  "vim.statusBarColors.commandlineinprogress": ["#005f5f", "#ffffff"],
-  "vim.statusBarColors.normal": ["#000000", "#ffffff"],
+  "vim.statusBarColors.insert": [
+    "#007acc",
+    "#ffffff"
+  ],
+  "vim.statusBarColors.searchinprogressmode": [
+    "#ea5605",
+    "#ffffff"
+  ],
+  "vim.statusBarColors.visual": [
+    "#5f00af",
+    "#ffffff"
+  ],
+  "vim.statusBarColors.visualline": [
+    "#5f00af",
+    "#ffffff"
+  ],
+  "vim.statusBarColors.replace": [
+    "#5f00af",
+    "#ffffff"
+  ],
+  "vim.statusBarColors.commandlineinprogress": [
+    "#005f5f",
+    "#ffffff"
+  ],
+  "vim.statusBarColors.normal": [
+    "#000000",
+    "#ffffff"
+  ],
   "editor.renderLineHighlight": "all",
+  "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#0007",
     "statusBar.background": "#000000",
@@ -176,16 +318,24 @@
   "window.menuBarVisibility": "toggle",
   "editor.tabCompletion": "on",
   "cursor.aipreview.enabled": true,
-  "projectManager.tags": ["Personal", "Work", "Context", "Application"],
+  "projectManager.tags": [
+    "Personal",
+    "Work",
+    "Context",
+    "Application"
+  ],
   "projectManager.filterOnFullPath": true,
-  "projectManager.git.baseFolders": ["~/workhub", "~/github", "~/dotfiles"],
-  "projectManager.any.baseFolders": ["~/github"],
+  "projectManager.git.baseFolders": [
+    "~/workhub",
+    "~/github",
+    "~/dotfiles"
+  ],
+  "projectManager.any.baseFolders": [
+    "~/github"
+  ],
   "projectManager.any.maxDepthRecursion": 1,
   "git.confirmSync": false,
   "gitlens.graph.minimap.enabled": false,
-  "[shellscript]": {
-    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
-  },
   "git.enableSmartCommit": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -216,4 +366,25 @@
     "**/id_dsa",
     "**/.ssh/id_*"
   ],
+  "diffEditor.renderSideBySide": true,
+  // Formatting ----------------------------------------------------------------
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+  },
+  "update.releaseTrack": "dev",
+  "update.mode": "silentlyApplyOnQuit",
+  // ---------------------------------------------------------------------------
 }
