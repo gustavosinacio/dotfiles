@@ -5,9 +5,14 @@
 [mgr]
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "r" ]
-run  = "cd /"
-desc = "Cd to root"
+  on   = [ "g", "r" ]
+  run  = "cd /"
+  desc = "Cd to root"
+
+[[mgr.prepend_keymap]]
+  on    = ["g", "p"]
+  run   = "cd /Plex"
+  desc  = "go to Plex"
 
 # keymap = [
 # 	{ on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
