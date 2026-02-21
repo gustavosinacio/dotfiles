@@ -1,28 +1,29 @@
-export ZSH="$HOME/.oh-my-zsh"
+# Enable completion
+autoload -Uz compinit
+compinit
 
-ZSH_THEME="fletcherm"
+# History settings
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
-source $ZSH/oh-my-zsh.sh
-
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
 export EDITOR='nvim'
 export RANGER_LOAD_DEFAULT_RC='false'
 
 export PATH=$PATH:$HOME/bin
 
-[ -d ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src ] && fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+# SOURCES
+## fzf keybindings
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 
-plugins=(
-  zsh-autosuggestions
-  zsh-completions
-  zsh-vi-mode
-)
-plugins+=(F-Sy-H)
+# fzf completion
+[ ! -f ~/.zsh/fzf-tab/fzf-tab.plugin.zsh ] && git clone https://github.com/Aloxaf/fzf-tab ~/.zsh/fzf-tab
+[ -f ~/.zsh/fzf-tab/fzf-tab.plugin.zsh ] && source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
-# Enable vi mode
-bindkey -v
-
-source $ZSH/oh-my-zsh.sh
-
+## my sources
 [ -f $HOME/.profile ] && source ~/.profile
 [ -f $HOME/dotfiles/.aliases.sh ] && source $HOME/dotfiles/.aliases.sh
 [ -f $HOME/.local_aliases ] && source $HOME/.local_aliases
@@ -30,3 +31,28 @@ source $ZSH/oh-my-zsh.sh
 [ -f ./.nvmrc ] && nvm use &>/dev/null
 
 source <(fzf --zsh)
+
+# zoxide (better cd)
+eval "$(zoxide init zsh)"
+
+# atuin (better history)
+eval "$(atuin init zsh)"
+
+# starship prompt
+eval "$(starship init zsh)"
+
+# Enable vi mode
+bindkey -v
+KEYTIMEOUT=1
+
+# transform cursor depending on the mode
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ; then
+    echo -ne '\e[1 q'  # block
+  else
+    echo -ne '\e[5 q'  # line
+  fi
+}
+zle -N zle-keymap-select
+echo -ne '\e[5 q'
+
