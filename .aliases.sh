@@ -1,9 +1,12 @@
 #!/bin/bash
 
 # Files, finder ----------------------------------------------------------------
+alias l='lsd'
 alias ls='lsd'
 alias ll='lsd -l'
 alias la='lsd -la'
+
+alias cat='bat'
 
 alias weather='curl -4 wttr.in/brasilia'
 
