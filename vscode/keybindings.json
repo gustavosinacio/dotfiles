@@ -192,7 +192,7 @@
   {
     "key": "z z",
     "command": "workbench.files.action.collapseExplorerFolders",
-    "when": "explorerViewletFocus"
+    "when": "explorerViewletFocus && !inputFocus"
   },
   {
     "key": "ctrl+w",
@@ -303,7 +303,7 @@
   {
     "key": "a",
     "command": "explorer.newFile",
-    "when": "explorerViewletFocus"
+    "when": "explorerViewletFocus && !inputFocus"
   },
   {
     "key": "shift+alt+p",
@@ -354,5 +354,10 @@
   {
     "key": "ctrl+shift+f",
     "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+    "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
   }
 ]

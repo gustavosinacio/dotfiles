@@ -15,6 +15,16 @@ export RANGER_LOAD_DEFAULT_RC='false'
 
 export PATH=$PATH:$HOME/bin
 
+# Install dependencies with brew on macOS
+if [[ "$(uname)" == "Darwin" ]] && command -v brew &>/dev/null; then
+  for cmd in zoxide atuin starship; do
+    if ! command -v "$cmd" &>/dev/null; then
+      echo "Installing $cmd via brew..."
+      brew install "$cmd"
+    fi
+  done
+fi
+
 # SOURCES
 ## fzf keybindings
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
@@ -31,6 +41,10 @@ export PATH=$PATH:$HOME/bin
 [ -f ./.nvmrc ] && nvm use &>/dev/null
 
 source <(fzf --zsh)
+
+# zsh plugins
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zoxide (better cd)
 eval "$(zoxide init zsh)"

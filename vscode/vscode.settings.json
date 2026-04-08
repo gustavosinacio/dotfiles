@@ -1,5 +1,6 @@
 {
   "debug.console.fontSize": 14,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrainsMono Nerd Font, Ink Free",
   "editor.fontSize": 14,
   "editor.lineNumbers": "relative",
@@ -16,6 +17,15 @@
   "window.commandCenter": true,
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
   // Vim ------------------------------------------------
   "vim.camelCaseMotion.enable": true,
   "vim.leader": " ",
@@ -305,10 +315,7 @@
     "#000000",
     "#ffffff"
   ],
-  "editor.renderLineHighlight": "all",
-  "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#0007",
     "statusBar.background": "#000000",
     "statusBar.noFolderBackground": "#000000",
     "statusBar.debuggingBackground": "#000000",
@@ -336,6 +343,9 @@
   "projectManager.any.maxDepthRecursion": 1,
   "git.confirmSync": false,
   "gitlens.graph.minimap.enabled": false,
+  "[shellscript]": {
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+  },
   "git.enableSmartCommit": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -351,26 +361,9 @@
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
   },
-  "claudeCode.preferredLocation": "panel"
-}
-  "cursor.general.globalCursorIgnoreList": [
-    "**/credentials.json",
-    "**/credentials.*.json",
-    "**/secret.json",
-    "**/secrets.json",
-    "**/*.key",
-    "**/*.pem",
-    "**/*.pfx",
-    "**/*.p12",
-    "**/*.crt",
-    "**/*.cer",
-    "**/id_rsa",
-    "**/id_dsa",
-    "**/.ssh/id_*"
-  ],
+  "claudeCode.preferredLocation": "panel",
   "diffEditor.renderSideBySide": true,
   // Formatting ----------------------------------------------------------------
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -387,6 +380,6 @@
     "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
   },
   "update.releaseTrack": "dev",
-  "update.mode": "silentlyApplyOnQuit",
+  "update.mode": "silentlyApplyOnQuit"
   // ---------------------------------------------------------------------------
 }
