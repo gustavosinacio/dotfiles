@@ -35,6 +35,7 @@ fi
 
 ## my sources
 [ -f $HOME/.profile ] && source ~/.profile
+[ -f $HOME/.local_profile ] && source ~/.local_profile
 [ -f $HOME/dotfiles/.aliases.sh ] && source $HOME/dotfiles/.aliases.sh
 [ -f $HOME/.local_aliases ] && source $HOME/.local_aliases
 [ -f $HOME/.colors ] && source $HOME/.colors
