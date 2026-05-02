@@ -381,5 +381,9 @@
   },
   "update.releaseTrack": "dev",
   "update.mode": "silentlyApplyOnQuit"
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
   // ---------------------------------------------------------------------------
 }

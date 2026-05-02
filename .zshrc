@@ -71,3 +71,5 @@ function zle-keymap-select {
 zle -N zle-keymap-select
 echo -ne '\e[5 q'
 
+
+. "$HOME/.atuin/bin/env"
